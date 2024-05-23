@@ -1,23 +1,32 @@
 <?php
-require_once '../vendor/autoload.php';
-
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../..');
-$dotenv->load();
-
 class Database {
-    private static $dbHost;
-    private static $dbName;
-    private static $dbUsername;
-    private static $dbPassword;
+    private static $instance = null;
+    private $connection;
 
-    public static function connect() {
-        self::$dbHost = $_ENV['DB_HOST'];
-        self::$dbName = $_ENV['DB_NAME'];
-        self::$dbUsername = $_ENV['DB_USERNAME'];
-        self::$dbPassword = $_ENV['DB_PASSWORD'];
-        
-        $pdo = new PDO("mysql:host=" . self::$dbHost . ";dbname=" . self::$dbName, self::$dbUsername, self::$dbPassword);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        return $pdo;
+    private $host = 'your_host';
+    private $username = 'your_username';
+    private $password = 'your_password';
+    private $database = 'your_database';
+
+    // Constructor is private to prevent direct instantiation
+    private function __construct() {
+        $this->connection = new mysqli($this->host, $this->username, $this->password, $this->database);
+        if ($this->connection->connect_error) {
+            die("Connection failed: " . $this->connection->connect_error);
+        }
+    }
+
+    // Method to get instance of database connection
+    public static function getInstance() {
+        if (self::$instance == null) {
+            self::$instance = new Database();
+        }
+        return self::$instance;
+    }
+
+    // Method to get the database connection
+    public function getConnection() {
+        return $this->connection;
     }
 }
+?>

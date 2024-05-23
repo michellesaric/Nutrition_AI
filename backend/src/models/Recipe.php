@@ -1,5 +1,6 @@
 <?php
-require_once '../config/database.php';
+require_once '../config/Database.php';
+require_once '../helpers/calculation_helper.php';
 
 class Recipe {
   private $id;
@@ -35,42 +36,45 @@ class Recipe {
   private $nutriScore;
   private $instructionsStepsTotal;
   private $categoryId;
-  
 
-
-  public function __construct($id, $recipe, $recipeHr, $description, $rating, $adjustedRating, $score, $author, $reviews, $prepTime, $cookTime, $readyTime, $calories, $servings, $nr, $lim3, $nrf, $nr2, $lim32, $nrf2, $nr3, $lim33, $nrf3, $carbPer, $fatPer, $proteinPer, $totalPer, $cumulativeScore1, $cumulativeScore2, $nutriScorePoints, $nutriScore, $instructionsStepsTotal, $categoryId) {
-    $this->id = $id;
+  public function __construct($recipe, $recipeHr, $description, $author, $prepTime, $cookTime, $readyTime, $servings, $categoryId) {
     $this->recipe = $recipe;
     $this->recipeHr = $recipeHr;
     $this->description = $description;
-    $this->rating = $rating;
-    $this->adjustedRating = $adjustedRating;
-    $this->score = $score;
     $this->author = $author;
-    $this->reviews = $reviews;
     $this->prepTime = $prepTime;
     $this->cookTime = $cookTime;
     $this->readyTime = $readyTime;
-    $this->calories = $calories;
     $this->servings = $servings;
-    $this->nr = $nr;
-    $this->lim3 = $lim3;
-    $this->nrf = $nrf;
-    $this->nr2 = $nr2;
-    $this->lim32 = $lim32;
-    $this->nrf2 = $nrf2;
-    $this->nr3 = $nr3;
-    $this->lim33 = $lim33;
-    $this->nrf3 = $nrf3;
-    $this->carbPer = $carbPer;
-    $this->fatPer = $fatPer;
-    $this->proteinPer = $proteinPer;
-    $this->totalPer = $totalPer;
-    $this->cumulativeScore1 = $cumulativeScore1;
-    $this->cumulativeScore2 = $cumulativeScore2;
-    $this->nutriScorePoints = $nutriScorePoints;
-    $this->nutriScore = $nutriScore;
-    $this->instructionsStepsTotal = $instructionsStepsTotal;
     $this->categoryId = $categoryId;
   }
+
+  public function calculateAndSetProperties($rating, $reviews, $calories, $instructionsStepsTotal) {
+    $this->rating = $rating;
+    $this->reviews = $reviews;
+    $this->calories = $calories;
+    $this->instructionsStepsTotal = $instructionsStepsTotal;
+
+    $this->adjustedRating = 0;
+    $this->score = 0;
+    $this->nr = 0;
+    $this->lim3 = 0;
+    $this->nrf = 0;
+  }
+
+  public function saveAndGetId() {
+    $db = Database::getInstance()->getConnection();
+    $query = "INSERT INTO recipes (recipe, recipeHr, description, author, prepTime, cookTime, readyTime, servings, categoryId, rating, adjustedRating, score, reviews, calories, instructionsStepsTotal, nr, lim3, nrf, nr2, lim32, nrf2, nr3, lim33, nrf3, carbPer, fatPer, proteinPer, totalPer, cumulativeScore1, cumulativeScore2, nutriScorePoints, nutriScore)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+      
+    $stmt = $db->prepare($query);
+    $stmt->bind_param('sssiiiiiiddddiiiiiiiiiiiiiiii', $this->recipe, $this->recipeHr, $this->description, $this->author, $this->prepTime, $this->cookTime, $this->readyTime, $this->servings, $this->categoryId, $this->rating, $this->adjustedRating, $this->score, $this->reviews, $this->calories, $this->instructionsStepsTotal, $this->nr, $this->lim3, $this->nrf, $this->nr2, $this->lim32, $this->nrf2, $this->nr3, $this->lim33, $this->nrf3, $this->carbPer, $this->fatPer, $this->proteinPer, $this->totalPer, $this->cumulativeScore1, $this->cumulativeScore2, $this->nutriScorePoints, $this->nutriScore);
+  
+    $stmt->execute();
+    $lastInsertedId = $stmt->insert_id;
+    $stmt->close();
+      
+    return $lastInsertedId;
+  }
 }
+?>

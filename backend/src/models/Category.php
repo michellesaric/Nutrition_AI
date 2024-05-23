@@ -9,10 +9,4 @@ class Category {
     $this->id = $id;
     $this->category = $category;
   }
-
-  public static function getAllCategories() {
-    $pdo = Database::connect();
-    $stmt = $pdo->query('SELECT * FROM category');
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-  }
 }

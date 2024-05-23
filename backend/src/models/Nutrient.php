@@ -15,10 +15,4 @@ class Nutrient {
     $this->measure = $measure;
     $this->fdcNutrientId = $fdcNutrientId;
   }
-
-  public static function getAllNutrients() {
-    $pdo = Database::connect();
-    $stmt = $pdo->query('SELECT * FROM nutrient');
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-  }
 }

@@ -9,10 +9,4 @@ class Instruction {
     $this->id = $id;
     $this->instruction = $instruction;
   }
-
-  public static function getAllInstructions() {
-    $pdo = Database::connect();
-    $stmt = $pdo->query('SELECT * FROM instruction');
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-  }
 }
