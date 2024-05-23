@@ -50,6 +50,8 @@ class RecipeController {
       $recipeInstruction->save();
     }
 
+    RecipeNutrient::calculateAndSaveRecipeNutrients($recipeId);
+
     echo json_encode(['status' => 'success', 'message' => 'Recipe created successfully']);
   }
 }
