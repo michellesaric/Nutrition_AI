@@ -78,18 +78,19 @@ class Recipe {
     $this->carbPer = calculateMacronutrientPer($lastInsertedId, $this->calories, 6, 4);
     $this->fatPer = calculateMacronutrientPer($lastInsertedId, $this->calories, 1, 9);
     $this->proteinPer = calculateMacronutrientPer($lastInsertedId, $this->calories, 8, 4);
-    $this->updateRecipe($lastInsertedId, $this->calories, $this->carbPer, $this->fatPer, $this->proteinPer);
+    $this->totalPer = $this->carbPer + $this->fatPer + $this->proteinPer;
+    $this->updateRecipe($lastInsertedId, $this->calories, $this->carbPer, $this->fatPer, $this->proteinPer, $this->totalPer);
     
     return $lastInsertedId;
   }
 
-  public function updateRecipe($recipeId, $calories, $carbPer, $fatPer, $proteinPer) {
+  public function updateRecipe($recipeId, $calories, $carbPer, $fatPer, $proteinPer , $totalPer) {
     $db = Database::getInstance()->getConnection();
-    $query = "UPDATE recipes SET calories = ?, carbPer = ?, fatPer = ?, proteinPer = ? WHERE id = ?";
+    $query = "UPDATE recipe SET calories = ?, carb_per = ?, fat_per = ?, protein_per = ?, total_per = ? WHERE id = ?";
     $stmt = $db->prepare($query);
-    $stmt->bind_param('ddddi', $calories, $carbPer, $fatPer, $proteinPer, $recipeId);
+    $stmt->bind_param('ddddi', $calories, $carbPer, $fatPer, $proteinPer, $recipeId, $totalPer);
     $stmt->execute();
     $stmt->close();
-}
+  }
 }
 ?>
