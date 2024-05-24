@@ -1,6 +1,7 @@
 <?php
 require_once '../config/Database.php';
-require_once '../helpers/calculation_helper.php';
+require_once '../utils/calculateRecipeCalories.php';
+require_once '../utils/calculateMacronutrientPer.php';
 
 class Recipe {
   private $id;
@@ -49,10 +50,9 @@ class Recipe {
     $this->categoryId = $categoryId;
   }
 
-  public function calculateAndSetProperties($rating, $reviews, $calories, $instructionsStepsTotal) {
+  public function calculateAndSetProperties($rating, $reviews, $instructionsStepsTotal) {
     $this->rating = $rating;
     $this->reviews = $reviews;
-    $this->calories = $calories;
     $this->instructionsStepsTotal = $instructionsStepsTotal;
 
     $this->adjustedRating = 0;
@@ -73,8 +73,23 @@ class Recipe {
     $stmt->execute();
     $lastInsertedId = $stmt->insert_id;
     $stmt->close();
-      
+
+    $this->calories = calculateRecipeCalories($lastInsertedId);
+    $this->carbPer = calculateMacronutrientPer($lastInsertedId, $this->calories, 6, 4);
+    $this->fatPer = calculateMacronutrientPer($lastInsertedId, $this->calories, 1, 9);
+    $this->proteinPer = calculateMacronutrientPer($lastInsertedId, $this->calories, 8, 4);
+    $this->updateRecipe($lastInsertedId, $this->calories, $this->carbPer, $this->fatPer, $this->proteinPer);
+    
     return $lastInsertedId;
   }
+
+  public function updateRecipe($recipeId, $calories, $carbPer, $fatPer, $proteinPer) {
+    $db = Database::getInstance()->getConnection();
+    $query = "UPDATE recipes SET calories = ?, carbPer = ?, fatPer = ?, proteinPer = ? WHERE id = ?";
+    $stmt = $db->prepare($query);
+    $stmt->bind_param('ddddi', $calories, $carbPer, $fatPer, $proteinPer, $recipeId);
+    $stmt->execute();
+    $stmt->close();
+}
 }
 ?>

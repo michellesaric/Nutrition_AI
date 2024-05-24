@@ -35,6 +35,7 @@ class RecipeNutrient {
             ri.ingredient_amount_weight_g,
             inr.nutrient_id,
             inr.nutrient_value,
+            inr.nutrient_unit,
             n.recommended_value
         FROM recipe_ingredient ri
         JOIN ingredient_nutrient inr ON ri.ingredient_id = inr.ingredient_id
@@ -54,14 +55,23 @@ class RecipeNutrient {
       $nutrientId = $row['nutrient_id'];
       $ingredientAmountWeightG = $row['ingredient_amount_weight_g'];
       $nutrientValue = $row['nutrient_value'];
+      $nutrientUnit = $row['nutrient_unit'];
       $recommendedValue = $row['recommended_value'];
 
       if (!isset($nutrients[$nutrientId])) {
         $nutrients[$nutrientId] = [
-          'nutrient_Value' => 0,
+          'nutrient_value' => 0,
           'daily_value' => 0
           ];
       }
+
+      // Adjust nutrient value based on unit
+      if ($nutrientUnit == 'mg') {
+        $nutrientValue /= 1000;
+      } elseif ($nutrientUnit == 'Âµg') {
+        $nutrientValue /= 1000000;
+      }
+      // 'g' and 'kcal' do not need adjustment
 
       $nutrients[$nutrientId]['nutrient_value'] += ($ingredientAmountWeightG * $nutrientValue) / 100;
     }
