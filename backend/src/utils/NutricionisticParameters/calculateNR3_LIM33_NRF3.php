@@ -1,6 +1,6 @@
 <?php 
 
-require_once './getDailyValue.php';
+require_once 'backend/src/utils/getDailyValue.php';
 require_once './calculateWeightByCategory.php';
 
 function calculateNR3_LIM33_NRF3($recipeId) {

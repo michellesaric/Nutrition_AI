@@ -1,16 +1,17 @@
 
 <?php
-require_once '../config/Database.php';
-require_once './getNutrients.php';
-require_once './calculateAverageMeal.php';
-require_once './getFruitVeg.php';
-require_once './calculateNutrientPoints/calculateEnergyPoints.php';
-require_once './calculateNutrientPoints/calculateSugarPoints.php';
-require_once './calculateNutrientPoints/calculateSaturatedFatPoints.php';
-require_once './calculateNutrientPoints/calculateSodiumPoints.php';
-require_once './calculateNutrientPoints/calculateFiberPoints.php';
-require_once './calculateNutrientPoints/calculateProteinPoints.php';
-require_once './calculateNutrientPoints/calculateFruitVegPoints.php';
+require_once 'backend/src/config/Database.php';
+require_once 'backend/src/utils/getNutrientValue.php';
+require_once 'backend/src/utils/NutriScore/calculateAverageMeal.php';
+require_once 'backend/src/utils/NutriScore/calculateNutrientPoints/calculateEnergyPoints.php';
+require_once 'backend/src/utils/NutriScore/calculateNutrientPoints/calculateSugarPoints.php';
+require_once 'backend/src/utils/NutriScore/calculateNutrientPoints/calculateSaturatedFatPoints.php';
+require_once 'backend/src/utils/NutriScore/calculateNutrientPoints/calculateSodiumPoints.php';
+require_once 'backend/src/utils/NutriScore/calculateNutrientPoints/calculateFiberPoints.php';
+require_once 'backend/src/utils/NutriScore/calculateNutrientPoints/calculateProteinPoints.php';
+require_once 'backend/src/utils/NutriScore/calculateNutrientPoints/calculateFruitVegPoints.php';
+require_once 'backend/src/utils/NutriScore/getFruitVeg.php';
+require_once 'backend/src/utils/NutriScore/calculateNutriScore.php';
 
 
 function calculateNutriPoints($recipeId) {
@@ -47,22 +48,5 @@ function calculateNutriPoints($recipeId) {
     $nutriScore = calculateNutriScore($nutriScorePoints);
 
     return [$nutriScorePoints, $nutriScore];
-}
-
-function calculateNutriScore($nutriScorePoints) {
-    switch (true) {
-        case ($nutriScorePoints >= -15 && $nutriScorePoints < 0):
-            return 1;
-        case ($nutriScorePoints >= 0 && $nutriScorePoints < 3):
-            return 2;
-        case ($nutriScorePoints >= 3 && $nutriScorePoints < 11):
-            return 3;
-        case ($nutriScorePoints >= 11 && $nutriScorePoints < 19):
-            return 4;
-        case ($nutriScorePoints >= 19 && $nutriScorePoints <= 40):
-            return 5;
-        default:
-            return null;
-    }
 }
 ?>

@@ -2,6 +2,7 @@
 require_once '../models/Recipe.php';
 require_once '../models/RecipeIngredient.php';
 require_once '../models/RecipeInstruction.php';
+require_once '../models/RecipeNutrient.php';
 
 class RecipeController {
   public function createRecipe() {
@@ -11,19 +12,16 @@ class RecipeController {
     $recipeHr = $data['recipeHr'];
     $description = $data['description'];
     $author = $data['author'];
-    $prepTime = $data['prepTime']; // mozda prazno, enable null
-    $cookTime = $data['cookTime']; // mozda prazno, enable null
-    $readyTime = $data['readyTime']; // mozda prazno, enable null
+    $prepTime = $data['prepTime']; // possibly null
+    $cookTime = $data['cookTime']; // possibly null
+    $readyTime = $data['readyTime']; // possibly null
     $servings = $data['servings'];
-    $categoryId = $data['categoryId']; // pronac category
-    $rating = $data['rating']; 
-    $reviews = $data['reviews'];
-    $calories = $data['calories'];
-    $instructionsStepsTotal = $data['instructionsStepsTotal'];
+    $categoryId = $data['categoryId'];
 
     $ingredients = $data['ingredients'];
     $instructions = $data['instructions'];
 
+    // Save initial recipe details and get recipe ID
     $newRecipe = new Recipe($recipe, $recipeHr, $description, $author, $prepTime, $cookTime, $readyTime, $servings, $categoryId);
     $recipeId = $newRecipe->saveAndGetId();
 
@@ -49,7 +47,11 @@ class RecipeController {
       $recipeInstruction->save();
     }
 
+    // Calculate and save nutrient values
     RecipeNutrient::calculateAndSaveRecipeNutrients($recipeId);
+
+    // Update recipe with calculated values and other attributes
+    $newRecipe->updateCalculatedValues($recipeId);
 
     echo json_encode(['status' => 'success', 'message' => 'Recipe created successfully']);
   }

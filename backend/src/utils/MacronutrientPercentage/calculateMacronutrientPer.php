@@ -1,5 +1,5 @@
 <?php
-require_once '../config/Database.php';
+require_once 'backend/src/config/Database.php';
 
 function calculateMacronutrientPer($recipeId, $calories, $macronutrientId, $macronutrientUnit) {
     $db = Database::getInstance()->getConnection();

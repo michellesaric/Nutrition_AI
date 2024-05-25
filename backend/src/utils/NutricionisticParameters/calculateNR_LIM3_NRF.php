@@ -1,6 +1,6 @@
 <?php 
 
-require_once './getDailyValue.php';
+require_once 'backend/src/utils/getDailyValue.php';
 
 function calculateNR_LIM3_NRF($recipeId) {
 

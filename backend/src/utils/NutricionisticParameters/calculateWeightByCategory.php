@@ -1,5 +1,5 @@
 <?php
-require_once '../config/Database.php';
+require_once 'backend/src/config/Database.php';
 
 function calculateWeightByCategory($recipeId, $categoryId) {
   $db = Database::getInstance()->getConnection();
