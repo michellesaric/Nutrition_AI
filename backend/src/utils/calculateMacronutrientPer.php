@@ -16,15 +16,15 @@ function calculateMacronutrientPer($recipeId, $calories, $macronutrientId, $macr
     $stmt->execute();
     $result = $stmt->get_result();
     
-    $carbPer = 0;
+    $macronutrientPer = 0;
 
     if ($row = $result->fetch_assoc()) {
         $nutrientValue = $row['nutrient_value'];
-        $carbPer = ($nutrientValue * $macronutrientUnit * 100) / $calories; 
+        $macronutrientPer = ($nutrientValue * $macronutrientUnit * 100) / $calories; 
     }
     
     $stmt->close();
 
-    return $carbPer;
+    return $macronutrientPer;
 }
 ?>

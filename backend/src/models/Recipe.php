@@ -2,6 +2,7 @@
 require_once '../config/Database.php';
 require_once '../utils/calculateRecipeCalories.php';
 require_once '../utils/calculateMacronutrientPer.php';
+require_once '../utils/calculateNutriPoints.php';
 
 class Recipe {
   private $id;
@@ -78,17 +79,19 @@ class Recipe {
     $this->carbPer = calculateMacronutrientPer($lastInsertedId, $this->calories, 6, 4);
     $this->fatPer = calculateMacronutrientPer($lastInsertedId, $this->calories, 1, 9);
     $this->proteinPer = calculateMacronutrientPer($lastInsertedId, $this->calories, 8, 4);
+    $this->nutriScorePoints = calculateNutriScore($lastInsertedId)[0];
+    $this->nutriScore = calculateNutriScore($lastInsertedId)[1];
     $this->totalPer = $this->carbPer + $this->fatPer + $this->proteinPer;
-    $this->updateRecipe($lastInsertedId, $this->calories, $this->carbPer, $this->fatPer, $this->proteinPer, $this->totalPer);
+    $this->updateRecipe($lastInsertedId, $this->calories, $this->carbPer, $this->fatPer, $this->proteinPer, $this->totalPer, $this->nutriScorePoints, $this->nutriScore);
     
     return $lastInsertedId;
   }
 
-  public function updateRecipe($recipeId, $calories, $carbPer, $fatPer, $proteinPer , $totalPer) {
+  public function updateRecipe($recipeId, $calories, $carbPer, $fatPer, $proteinPer , $totalPer, $nutriScorePoints, $nutriScore) {
     $db = Database::getInstance()->getConnection();
-    $query = "UPDATE recipe SET calories = ?, carb_per = ?, fat_per = ?, protein_per = ?, total_per = ? WHERE id = ?";
+    $query = "UPDATE recipe SET calories = ?, carb_per = ?, fat_per = ?, protein_per = ?, total_per = ?, nutri_score_points = ?, nutri_score = ? WHERE id = ?";
     $stmt = $db->prepare($query);
-    $stmt->bind_param('ddddi', $calories, $carbPer, $fatPer, $proteinPer, $recipeId, $totalPer);
+    $stmt->bind_param('dddddiii', $calories, $carbPer, $fatPer, $proteinPer, $totalPer, $nutriScorePoints, $nutriScore, $recipeId);
     $stmt->execute();
     $stmt->close();
   }
