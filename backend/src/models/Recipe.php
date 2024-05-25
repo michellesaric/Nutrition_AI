@@ -3,6 +3,7 @@ require_once '../config/Database.php';
 require_once '../utils/calculateRecipeCalories.php';
 require_once '../utils/calculateMacronutrientPer.php';
 require_once '../utils/calculateNutriPoints.php';
+require_once '../utils/calculateNR_LIM3_NRF.php';
 
 class Recipe {
   private $id;
@@ -58,9 +59,6 @@ class Recipe {
 
     $this->adjustedRating = 0;
     $this->score = 0;
-    $this->nr = 0;
-    $this->lim3 = 0;
-    $this->nrf = 0;
   }
 
   public function saveAndGetId() {
@@ -79,9 +77,17 @@ class Recipe {
     $this->carbPer = calculateMacronutrientPer($lastInsertedId, $this->calories, 6, 4);
     $this->fatPer = calculateMacronutrientPer($lastInsertedId, $this->calories, 1, 9);
     $this->proteinPer = calculateMacronutrientPer($lastInsertedId, $this->calories, 8, 4);
+    $this->nr = calculateNR_LIM3_NRF($lastInsertedId)[0];
+    $this->lim3 = calculateNR_LIM3_NRF($lastInsertedId)[1];
+    $this->nrf = calculateNR_LIM3_NRF($lastInsertedId)[2];
+    $this->nr2 = ($this->nr * 100) / $this->calories;
+    $this->lim32 = ($this->lim3 * 100) / $this->calories;
+    $this->nrf2 = ($this->nrf * 100) / $this->calories;
+    $this->totalPer = $this->carbPer + $this->fatPer + $this->proteinPer;
     $this->nutriScorePoints = calculateNutriScore($lastInsertedId)[0];
     $this->nutriScore = calculateNutriScore($lastInsertedId)[1];
-    $this->totalPer = $this->carbPer + $this->fatPer + $this->proteinPer;
+
+
     $this->updateRecipe($lastInsertedId, $this->calories, $this->carbPer, $this->fatPer, $this->proteinPer, $this->totalPer, $this->nutriScorePoints, $this->nutriScore);
     
     return $lastInsertedId;

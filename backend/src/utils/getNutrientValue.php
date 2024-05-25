@@ -1,7 +1,7 @@
 <?php
 require_once '../config/Database.php';
 
-function getNutrient($recipeId, $macronutrientId) {
+function getNutrientValue($recipeId, $macronutrientId) {
     $db = Database::getInstance()->getConnection();
     
     $query = `
@@ -29,26 +29,26 @@ function getNutrient($recipeId, $macronutrientId) {
 
 
 function getEnergy($recipeId, $averageMeal100) {
-  return getNutrient($recipeId, 29) / $averageMeal100;
+  return getNutrientValue($recipeId, 29) / $averageMeal100;
 }
 
 function getSugar($recipeId, $averageMeal100) {
-  return getNutrient($recipeId, 9) / $averageMeal100;
+  return getNutrientValue($recipeId, 9) / $averageMeal100;
 }
 
 function getSaturatedFat($recipeId, $averageMeal100) {
-  return getNutrient($recipeId, 2) / $averageMeal100;
+  return getNutrientValue($recipeId, 2) / $averageMeal100;
 }
 
 function getSodium($recipeId, $averageMeal100) {
-  return getNutrient($recipeId, 4) / $averageMeal100;
+  return getNutrientValue($recipeId, 4) / $averageMeal100;
 }
 
 function getFibers($recipeId, $averageMeal100) {
-  return getNutrient($recipeId, 7) / $averageMeal100;
+  return getNutrientValue($recipeId, 7) / $averageMeal100;
 }
 
 function getProteins($recipeId, $averageMeal100) {
-  return getNutrient($recipeId, 8) / $averageMeal100;
+  return getNutrientValue($recipeId, 8) / $averageMeal100;
 }
 ?>
