@@ -7,6 +7,7 @@ require_once 'backend/src/utils/NutricionisticParameters/calculateNR_LIM3_NRF.ph
 require_once 'backend/src/utils/NutricionisticParameters/calculateNR3_LIM33_NRF3.php';
 require_once 'backend/src/utils/CumulativeScores/calculateCumulativeScore1.php';
 require_once 'backend/src/utils/CumulativeScores/calculateCumulativeScore2.php';
+require_once 'backend/src/utils/InstructionSteps/calculateInstructionSteps.php';
 
 class Recipe {
   private $id;
@@ -87,6 +88,7 @@ class Recipe {
     $this->nrf3 = calculateNR3_LIM33_NRF3($recipeId)[2];
     $this->nutriScorePoints = calculateNutriPoints($recipeId)[0];
     $this->nutriScore = calculateNutriPoints($recipeId)[1];
+    $this->instructionsStepsTotal = calculateInstructionSteps($recipeId);
 
     $this->updateRecipe($recipeId);
     calculateCumulativeScore1();
