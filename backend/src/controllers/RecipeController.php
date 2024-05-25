@@ -25,7 +25,6 @@ class RecipeController {
     $instructions = $data['instructions'];
 
     $newRecipe = new Recipe($recipe, $recipeHr, $description, $author, $prepTime, $cookTime, $readyTime, $servings, $categoryId);
-    $newRecipe->calculateAndSetProperties($rating, $reviews, $calories, $instructionsStepsTotal);
     $recipeId = $newRecipe->saveAndGetId();
 
     // Add Ingredients
