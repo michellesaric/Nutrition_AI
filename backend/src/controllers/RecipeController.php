@@ -1,8 +1,8 @@
 <?php
-require_once '../models/Recipe.php';
-require_once '../models/RecipeIngredient.php';
-require_once '../models/RecipeInstruction.php';
-require_once '../models/RecipeNutrient.php';
+require_once 'backend/src/models/Recipe.php';
+require_once 'backend/src/models/RecipeIngredient.php';
+require_once 'backend/src/models/RecipeInstruction.php';
+require_once 'backend/src/models/RecipeNutrient.php';
 
 class RecipeController {
   public function createRecipe() {

@@ -1,24 +1,29 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import CreateRecipe from "./CreateRecipe";
+import CategoryList from "./CategoryList";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>I'm gonna add a recipe now hue</p>
-        <p className="App-link"></p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/create-recipe">Create Recipe</Link>
+            </li>
+            <li>
+              <Link to="/categories">Show categories</Link>
+            </li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path="/create-recipe" element={<CreateRecipe />} />
+          <Route path="/categories" element={<CategoryList />} />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;

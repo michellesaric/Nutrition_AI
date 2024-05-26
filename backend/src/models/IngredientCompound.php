@@ -1,5 +1,5 @@
 <?php
-require_once '../config/database.php';
+require_once 'backend/src/config/Database.php';
 
 class IngredientCompound {
   private $id;
