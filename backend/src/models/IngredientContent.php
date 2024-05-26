@@ -3,12 +3,36 @@ require_once '../config/database.php';
 
 class IngredientContent {
   private $id;
-  private $ingredientCategoryId;
-  private $ingredientSubcategoryId;
+  private $content;
 
-  public function __construct($id, $ingredientCategoryId, $ingredientSubcategoryId) {
+  public function __construct($id, $content) {
     $this->id = $id;
-    $this->ingredientCategoryId = $ingredientCategoryId;
-    $this->ingredientSubcategoryId = $ingredientSubcategoryId;
+    $this->content = $content;
+  }
+
+  public static function listEveryIngredientContent() {
+    $db = Database::getInstance()->getConnection();
+    
+    $query = "SELECT * FROM ingredient_content";
+    $stmt = $db->prepare($query);
+    $stmt->execute();
+    $result = $stmt->get_result();
+  
+    $ingredientContentList = [];
+    while ($row = $result->fetch_assoc()) {
+      $ingredientContentList[] = new IngredientContent($row['id'], $row['content']);
+    }
+  
+    $stmt->close();
+    return $ingredientContentList;
+  }
+
+  // Getters for the properties
+  public function getId() {
+    return $this->id;
+  }
+
+  public function getIngredientContent() {
+    return $this->content;
   }
 }
