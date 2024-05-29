@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "Recoleta Alt";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/frontend/src/assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff2") format("woff2"), url("/frontend/src/assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff") format("woff");
+}
+@font-face {
+  font-family: "Montserrat Medium";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/frontend/src/assets/fonts/Montserrat/Montserrat-Medium.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Montserrat Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/frontend/src/assets/fonts/Montserrat/Montserrat-Bold.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Recoleta Alt";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/frontend/src/assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff2") format("woff2"), url("/frontend/src/assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff") format("woff");
+}
+@font-face {
+  font-family: "Montserrat Medium";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/frontend/src/assets/fonts/Montserrat/Montserrat-Medium.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Montserrat Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/frontend/src/assets/fonts/Montserrat/Montserrat-Bold.ttf") format("ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
