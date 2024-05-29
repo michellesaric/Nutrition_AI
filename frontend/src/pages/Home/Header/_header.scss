@@ -56,6 +56,7 @@
       max-width: 585px;
       text-align: center;
       @include TextBodyMedium($--color-heading);
+      margin-bottom: 1.5vw;
     }
   }
 }

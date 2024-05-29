@@ -3,6 +3,8 @@
 @import "./mixins/fontMixin";
 @import "../pages/Home/Header/header";
 @import "../assets/images/headerBackground";
+@import "../pages/Home/SearchBar/searchBar";
+@import "../pages/Home/SearchBar/SearchResult/searchResult";
 
 * {
   margin: 0;

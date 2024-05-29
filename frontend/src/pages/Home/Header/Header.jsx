@@ -2,6 +2,7 @@ import { useState } from "react";
 import HeaderBackground from "../../../assets/images/HeaderBackground";
 import MediumIcon from "../../../assets/icons/MediumIcon";
 import { Link } from "react-router-dom";
+import SearchBar from "../SearchBar/SearchBar";
 
 const Header = () => {
   const [className, setClassName] = useState("header__link-wrapper");
@@ -41,6 +42,7 @@ const Header = () => {
           Create your own healthy multi-course meal based on whatever
           ingredients you like
         </p>
+        <SearchBar />
       </div>
     </header>
   );

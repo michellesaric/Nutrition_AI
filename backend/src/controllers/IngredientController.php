@@ -13,11 +13,66 @@ class IngredientController {
     $categorySubcategoryId = $newCategorySubcatgory->saveAndGetId();
     $ingredientTypeId = $data['ingredientTypeId'];
     $ingredientUsed = null;
-    $fdcld_FNNDS = $data['fdcld_FNDDS'];
-    $fdcld_SR_Legacy = $data['fdcld_SR_Legacy'];
+    $fdcId_FNDDS = $data['fdcId_FNDDS'];
+    $fdcId_SR_Legacy = $data['fdcId_SR_Legacy'];
 
+    $newIngredient = new Ingredient($ingredient, $categorySubcategoryId, $ingredientTypeId, $ingredientUsed, $fdcId_FNDDS, $fdcId_SR_Legacy);
+    $newIngredient->save();
 
-    echo json_encode(['status' => 'success', 'message' => 'Recipe created successfully']);
+    echo json_encode(['status' => 'success', 'message' => 'Ingredient created successfully']);
+  }
+
+  public function getAllIngredientsBySearch($searchString) {
+    header('Content-Type: application/json');
+
+    try {
+      $ingredients = Ingredient::listAllIngredientsByIngredient($searchString);
+      $ingredientsArray = [];
+
+      foreach ($ingredients as $ingredient) {
+        $ingredientsArray[] = [
+          'id' => $ingredient->getId(),
+          'ingredient' => $ingredient->getIngredient(),
+          'category_subcategory_id' => $ingredient->getCategorySubcategoryId()
+        ];
+      }
+
+      echo json_encode([
+        'status' => 'success',
+        'data' => $ingredientsArray
+      ]);
+    } catch (Exception $e) {
+      echo json_encode([
+        'status' => 'error',
+        'message' => $e->getMessage()
+      ]);
+    }
+  }
+
+  public function getAllIngredients() {
+    header('Content-Type: application/json');
+
+    try {
+      $ingredients = Ingredient::listAllIngredients();
+      $ingredientsArray = [];
+
+      foreach ($ingredients as $ingredient) {
+        $ingredientsArray[] = [
+          'id' => $ingredient->getId(),
+          'ingredient' => $ingredient->getIngredient()
+        ];
+      }
+
+      echo json_encode([
+        'status' => 'success',
+        'data' => $ingredientsArray
+      ]);
+    } catch (Exception $e) {
+      echo json_encode([
+        'status' => 'error',
+        'message' => $e->getMessage()
+      ]);
+    }
   }
 }
 ?>
