@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
-import SearchIcon from "../../../assets/icons/SearchIcon";
-import useFetchIngredients from "../../../apiHooks/useFetchIngredients";
+import SearchIcon from "../../assets/icons/SearchIcon";
+import useFetchIngredients from "../../apiHooks/useFetchIngredients";
 import SearchResult from "./SearchResult/SearchResult";
-import { SearchContext } from "../../../context/SearchContext";
+import { SearchContext } from "../../context/SearchContext";
 import { useNavigate } from "react-router-dom";
 
 const SearchBar = () => {

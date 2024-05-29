@@ -1,10 +1,11 @@
 @import "./fonts";
 @import "./variables";
 @import "./mixins/fontMixin";
-@import "../pages/Home/Header/header";
+@import "../components/Header/header";
 @import "../assets/images/headerBackground";
-@import "../pages/Home/SearchBar/searchBar";
-@import "../pages/Home/SearchBar/SearchResult/searchResult";
+@import "../assets/images/headerBackgroundRecipe";
+@import "../components/SearchBar/searchBar";
+@import "../components/SearchBar/SearchResult/searchResult";
 
 * {
   margin: 0;

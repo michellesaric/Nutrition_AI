@@ -1,22 +1,31 @@
 import { useState } from "react";
-import HeaderBackground from "../../../assets/images/HeaderBackground";
-import MediumIcon from "../../../assets/icons/MediumIcon";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import HeaderBackground from "../../assets/images/HeaderBackground";
+import MediumIcon from "../../assets/icons/MediumIcon";
 import SearchBar from "../SearchBar/SearchBar";
+import HeaderBackgroundRecipe from "../../assets/images/HeaderBackgroundRecipe";
 
 const Header = () => {
   const [className, setClassName] = useState("header__link-wrapper");
+  const location = useLocation();
 
   const handleOpen = () => {
-    setClassName((prevClassName) => "header__link-wrapper-mobile");
+    setClassName("header__link-wrapper-mobile");
   };
 
   const handleClose = () => {
-    setClassName((prevClassName) => "header__link-wrapper");
+    setClassName("header__link-wrapper");
   };
+
+  const isHome = location.pathname === "/";
+
   return (
     <header className="header">
-      <HeaderBackground className="header__background" />
+      {isHome ? (
+        <HeaderBackground className="header__background" />
+      ) : (
+        <HeaderBackgroundRecipe />
+      )}
       <div className="header__wrapper">
         <div className="header__link-logo-wrapper">
           <Link to="/" className="header__logo">
@@ -37,12 +46,18 @@ const Header = () => {
             </p>
           </div>
         </div>
-        <h1 className="header__main-title">Living smart? Living healthy?</h1>
-        <p className="header__main-title-subtext">
-          Create your own healthy multi-course meal based on whatever
-          ingredients you like
-        </p>
-        <SearchBar />
+        {isHome && (
+          <>
+            <h1 className="header__main-title">
+              Living smart? Living healthy?
+            </h1>
+            <p className="header__main-title-subtext">
+              Create your own healthy multi-course meal based on whatever
+              ingredients you like
+            </p>
+            <SearchBar />
+          </>
+        )}
       </div>
     </header>
   );

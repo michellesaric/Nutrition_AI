@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
-const HeaderBackground = () => {
+const HeaderBackgroundRecipe = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
 
   useEffect(() => {
@@ -17,19 +17,19 @@ const HeaderBackground = () => {
   const svgStyle = {
     width: isMobile ? "800px" : "100%",
     height: isMobile ? "191px" : "auto",
-    position: isMobile ? "fixed" : "static",
-    top: isMobile ? "-40px" : "",
+    position: isMobile ? "absolute" : "static",
+    top: "-60px",
   };
-
   return (
     <svg
+      className="header-background-recipe"
       xmlns="http://www.w3.org/2000/svg"
       style={svgStyle}
-      viewBox="0 0 1440 344"
+      viewBox="0 0 1440 127"
       fill="none"
     >
       <path
-        d="M0 0H1440V318.794C866.805 354.355 552.724 350.39 0 318.794V0Z"
+        d="M0 0H1440V117.694C866.805 130.823 552.724 129.359 0 117.694V0Z"
         fill="#2A8460"
         fillOpacity="0.1"
       />
@@ -37,4 +37,4 @@ const HeaderBackground = () => {
   );
 };
 
-export default HeaderBackground;
+export default HeaderBackgroundRecipe;

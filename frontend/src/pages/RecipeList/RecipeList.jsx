@@ -1,5 +1,11 @@
+import Header from "../../components/Header/Header";
+
 const RecipeList = () => {
-  return <div>RecipeList</div>;
+  return (
+    <div>
+      <Header />
+    </div>
+  );
 };
 
 export default RecipeList;
