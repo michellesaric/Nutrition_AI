@@ -1,0 +1,17 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins/fontMixin";
+
+.title {
+  margin-bottom: 32px;
+  width: 1200px;
+
+  .title__text {
+    @include HeadingOne();
+    margin-bottom: 8px;
+  }
+
+  .title__subtext {
+    max-width: 804px;
+    @include TextBodyMedium($--neutral-600);
+  }
+}

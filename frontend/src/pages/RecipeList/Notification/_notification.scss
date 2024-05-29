@@ -1,0 +1,26 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins/fontMixin";
+
+.notification {
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-radius: 12px;
+  background-color: $--highlight-10;
+  margin: 24px 0px 32px;
+
+  .notification__text {
+    @include HeadingFive($--color-highlight);
+  }
+
+  .notification__button {
+    padding: 12px 24px;
+    border-radius: 99px;
+    background-color: $--color-highlight;
+    @include HeadingFive($--neutral-100);
+    border: none;
+    cursor: pointer;
+  }
+}

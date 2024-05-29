@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import SearchIcon from "../../assets/icons/SearchIcon";
+import SearchIcon from "../icons/SearchIcon";
 import useFetchIngredients from "../../apiHooks/useFetchIngredients";
 import SearchResult from "./SearchResult/SearchResult";
 import { SearchContext } from "../../context/SearchContext";

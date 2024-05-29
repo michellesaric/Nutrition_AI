@@ -1,5 +1,5 @@
-import SearchIcon from "../../../assets/icons/SearchIcon";
-import ExitIcon from "../../../assets/icons/ExitIcon";
+import SearchIcon from "../../icons/SearchIcon";
+import ExitIcon from "../../icons/ExitIcon";
 
 const SearchResult = ({
   ingredients,

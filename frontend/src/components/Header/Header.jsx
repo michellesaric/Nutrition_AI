@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import HeaderBackground from "../../assets/images/HeaderBackground";
-import MediumIcon from "../../assets/icons/MediumIcon";
+import MediumIcon from "../icons/MediumIcon";
 import SearchBar from "../SearchBar/SearchBar";
 import HeaderBackgroundRecipe from "../../assets/images/HeaderBackgroundRecipe";
 
