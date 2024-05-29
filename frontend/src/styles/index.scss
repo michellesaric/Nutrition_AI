@@ -1,9 +1,12 @@
 @import "./fonts";
 @import "./variables";
 @import "./mixins/fontMixin";
+@import "../pages/Home/Header/header";
+@import "../assets/images/headerBackground";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
 }

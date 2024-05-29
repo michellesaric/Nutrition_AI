@@ -1,0 +1,147 @@
+@import "../../../styles/mixins/fontMixin";
+@import "../../../styles/variables";
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  .header__wrapper {
+    position: absolute;
+    top: 38px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .header__link-logo-wrapper {
+      width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 46px;
+
+      .header__logo {
+        @include HeadingTwo($--color-primary);
+        cursor: pointer;
+
+        .header__logo-dot {
+          color: $--color-highlight;
+        }
+      }
+
+      .header__medium-icon {
+        display: none;
+      }
+
+      .header__link-wrapper {
+        display: flex;
+
+        .header__link {
+          @include HeadingThree();
+          cursor: pointer;
+        }
+
+        .header__link:not(:last-child) {
+          margin-right: 35px;
+        }
+      }
+    }
+
+    .header__main-title {
+      @include HeadingOne();
+      margin-bottom: 12px;
+    }
+
+    .header__main-title-subtext {
+      max-width: 585px;
+      text-align: center;
+      @include TextBodyMedium($--color-heading);
+    }
+  }
+}
+
+@media screen and (max-width: 1220px) {
+  .header {
+    .header__wrapper {
+      top: 19px;
+      .header__link-logo-wrapper {
+        width: 100vw;
+        padding: 0px 20px;
+        margin-bottom: 23px;
+      }
+
+      .header__main-title {
+        @include HeadingTwo();
+        margin-bottom: 6px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .header {
+    .header__wrapper {
+      .header__link-logo-wrapper {
+        margin-bottom: 11px;
+
+        .header__logo {
+          @include HeadingThree($--color-primary);
+        }
+
+        .header__link-wrapper {
+          .header__link {
+            @include HeadingFour();
+          }
+
+          .header__link:not(:last-child) {
+            margin-right: 16px;
+          }
+        }
+      }
+
+      .header__main-title {
+        @include HeadingThree();
+        margin-bottom: 6px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    .header__wrapper {
+      .header__link-logo-wrapper {
+        .header__medium-icon {
+          display: block;
+          cursor: pointer;
+        }
+        .header__link-wrapper-mobile {
+          position: absolute;
+          top: -20px;
+          background-color: rgb(170, 206, 191);
+          margin-left: -20px;
+          width: 100vw;
+          height: 100vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          z-index: 1;
+
+          .header__link {
+            @include HeadingThree();
+            cursor: pointer;
+          }
+
+          .header__link:not(:last-child) {
+            margin: 0;
+            margin-bottom: 60px;
+          }
+        }
+        .header__link-wrapper {
+          display: none;
+        }
+      }
+    }
+  }
+}

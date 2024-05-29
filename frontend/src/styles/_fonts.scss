@@ -3,10 +3,9 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url("/frontend/src/assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff2")
+  src: url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff2)
       format("woff2"),
-    url("/frontend/src/assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff")
-      format("woff");
+    url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff) format("woff");
 }
 
 @font-face {
@@ -14,8 +13,8 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("/frontend/src/assets/fonts/Montserrat/Montserrat-Medium.ttf")
-    format("ttf");
+  src: url(../../assets/fonts/Montserrat/Montserrat-Medium.ttf)
+    format("truetype");
 }
 
 @font-face {
@@ -23,6 +22,5 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("/frontend/src/assets/fonts/Montserrat/Montserrat-Bold.ttf")
-    format("ttf");
+  src: url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("truetype");
 }
