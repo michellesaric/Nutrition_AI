@@ -32,6 +32,9 @@
   }
 
   .recipe-actions__sort-download {
+    display: flex;
+    justify-content: space-between;
+
     .recipe-actions__sort {
       width: 317px;
 
@@ -62,6 +65,25 @@
         .recipe-actions__sort-reverse-icon {
           transform: rotate(180deg);
         }
+      }
+    }
+
+    .recipe-actions__download {
+      .recipe-actions__download-button {
+        padding: 12px 24px;
+        border-radius: 99px;
+        border: 1px solid $--color-secondary;
+        @include HeadingFive($--color-secondary);
+        margin-right: 24px;
+        cursor: pointer;
+      }
+
+      .recipe-actions__view-selected-recipes {
+        padding: 12px 24px;
+        border-radius: 99px;
+        background: $--color-secondary;
+        @include HeadingFive($--neutral-100);
+        cursor: pointer;
       }
     }
   }

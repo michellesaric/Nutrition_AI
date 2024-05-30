@@ -703,6 +703,14 @@
   line-height: 24px;
   margin-right: 8px;
 }
+.recipe-actions .recipe-actions__sort-download {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
 .recipe-actions .recipe-actions__sort-download .recipe-actions__sort {
   width: 317px;
 }
@@ -742,6 +750,27 @@
 .recipe-actions .recipe-actions__sort-download .recipe-actions__sort .recipe-actions__sort-box .recipe-actions__sort-reverse-icon {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
+}
+.recipe-actions .recipe-actions__sort-download .recipe-actions__download .recipe-actions__download-button {
+  padding: 12px 24px;
+  border-radius: 99px;
+  border: 1px solid #4a4995;
+  color: #4a4995;
+  font-family: "Recoleta Alt";
+  font-size: 16px;
+  line-height: normal;
+  margin-right: 24px;
+  cursor: pointer;
+}
+.recipe-actions .recipe-actions__sort-download .recipe-actions__download .recipe-actions__view-selected-recipes {
+  padding: 12px 24px;
+  border-radius: 99px;
+  background: #4a4995;
+  color: #fff;
+  font-family: "Recoleta Alt";
+  font-size: 16px;
+  line-height: normal;
+  cursor: pointer;
 }
 
 @font-face {

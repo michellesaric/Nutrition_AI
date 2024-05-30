@@ -43,34 +43,40 @@ const RecipeActions = ({ sortString, setSortString }) => {
       </div>
 
       <div className="recipe-actions__sort-download">
-        <div className="recipe-actions__sort-download">
-          <div className="recipe-actions__sort">
-            <p className="recipe-actions__sort-text">Sort by:</p>
-            <div className="recipe-actions__sort-box">
-              <input
-                placeholder={sortString}
-                value={sortString || ""}
-                className="recipe-actions__sort-input"
-                disabled
-              />
-              <div
-                className={
-                  toggle
-                    ? "recipe-actions__sort-reverse-icon"
-                    : "recipe-actions__sort-icon"
-                }
-                onClick={handleToggle}
-              >
-                <ArrowDown />
-              </div>
+        <div className="recipe-actions__sort">
+          <p className="recipe-actions__sort-text">Sort by:</p>
+          <div className="recipe-actions__sort-box">
+            <input
+              placeholder="Score"
+              value={sortString || ""}
+              className="recipe-actions__sort-input"
+              disabled
+            />
+            <div
+              className={
+                toggle
+                  ? "recipe-actions__sort-reverse-icon"
+                  : "recipe-actions__sort-icon"
+              }
+              onClick={handleToggle}
+            >
+              <ArrowDown />
             </div>
-            {toggle && (
-              <RecipeActionsSort
-                setSortString={setSortString}
-                setToggle={setToggle}
-              />
-            )}
           </div>
+          {toggle && (
+            <RecipeActionsSort
+              setSortString={setSortString}
+              setToggle={setToggle}
+            />
+          )}
+        </div>
+        <div className="recipe-actions__download">
+          <button className="recipe-actions__download-button">
+            Download recipes(0)
+          </button>
+          <button className="recipe-actions__view-selected-recipes">
+            View selected recipes(0)
+          </button>
         </div>
       </div>
     </section>
