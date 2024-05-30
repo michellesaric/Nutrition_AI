@@ -6,9 +6,13 @@
 @import "../assets/images/headerBackgroundRecipe";
 @import "../components/SearchBar/searchBar";
 @import "../components/SearchBar/SearchResult/searchResult";
-@import "../pages/RecipeList/recipeList";
-@import "../pages/RecipeList/Notification/notification";
-@import "../pages/RecipeList/Title/title";
+@import "../components/CategorySection/categorySection";
+@import "../pages/Recipes/recipes";
+@import "../pages/Recipes/Notification/notification";
+@import "../pages/Recipes/Title/title";
+@import "../pages/Recipes/RecipeListings/RecipeFilter/recipeFilter";
+@import "../pages/Recipes/RecipeListings/RecipeActions/recipeActions";
+@import "../pages/Recipes/RecipeListings/RecipeActions/RecipeActionsSort/recipeActionsSort";
 
 * {
   margin: 0;

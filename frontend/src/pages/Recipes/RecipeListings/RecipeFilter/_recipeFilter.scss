@@ -1,0 +1,36 @@
+@import "../../../../styles/mixins/fontMixin";
+@import "../../../../styles/variables";
+
+.recipe-filter {
+  display: flex;
+  width: 387px;
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 12px;
+  background: $--neutral-200;
+
+  .recipe-filter__title {
+    @include HeadingThree();
+  }
+
+  .recipe-filter__active-filters {
+    @include TextSmallMedium($--neutral-700);
+    margin-bottom: 24px;
+  }
+
+  .recipe-filter__categories {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .recipe-filter__button {
+    margin-top: 28px;
+    padding: 8px 24px;
+    border-radius: 99px;
+    border: none;
+    background: ($--color-primary);
+    @include HeadingFive($--neutral-100);
+  }
+}

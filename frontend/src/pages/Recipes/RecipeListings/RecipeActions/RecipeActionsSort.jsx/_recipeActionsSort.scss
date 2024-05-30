@@ -1,0 +1,22 @@
+@import "../../../../../styles/variables";
+@import "../../../../../styles/mixins/fontMixin";
+
+.parameters-list {
+  margin-top: 12px;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  border-radius: 24px;
+  border: 1px solid $--neutral-300;
+  background: $--neutral-100;
+
+  .parameter {
+    @include TextBodyMedium($--neutral-800);
+    cursor: pointer;
+  }
+  .parameter:hover {
+    background-color: $--neutral-200;
+  }
+}

@@ -1,0 +1,68 @@
+@import "../../../../styles/mixins/fontMixin";
+@import "../../../../styles/variables";
+
+.recipe-actions {
+  width: 1200px;
+
+  .recipe-actions__ingredients {
+    margin-bottom: 22px;
+
+    .recipe-actions__title {
+      @include TextBodyMedium($--neutral-700);
+      margin-bottom: 8px;
+    }
+
+    .recipe-actions__ingredients-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+
+      .recipe-actions__ingredient-box {
+        display: flex;
+        padding: 8px 16px;
+        align-items: center;
+        border-radius: 99px;
+        border: 1px solid $--neutral-300;
+
+        .recipe-actions__ingredient {
+          @include TextBodyMedium($--neutral-700);
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+
+  .recipe-actions__sort-download {
+    .recipe-actions__sort {
+      width: 317px;
+
+      .recipe-actions__sort-text {
+        @include TextBodyMedium(#000);
+        margin-bottom: 4px;
+      }
+
+      .recipe-actions__sort-box {
+        display: flex;
+        padding: 12px 16px 12px 24px;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 99px;
+        border: 1px solid $--neutral-300;
+        background: $--neutral-100;
+
+        .recipe-actions__sort-input {
+          @include TextBodyMedium($--neutral-800);
+          width: 100%;
+          border: none;
+        }
+
+        .recipe-actions__sort-icon {
+          cursor: pointer;
+        }
+
+        .recipe-actions__sort-reverse-icon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}

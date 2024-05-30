@@ -1,0 +1,32 @@
+.recipe-filter__category-title {
+  @include HeadingFive($--color-secondary);
+  margin-bottom: 8px;
+}
+
+.recipe-filter__category-wrapper {
+  display: flex;
+
+  .recipe-filter__checkmark-box {
+    width: 24px;
+    height: 24px;
+    border-radius: 8px;
+    border: 1px solid $--neutral-600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .checked {
+    border-color: $--color-primary;
+    background-color: $--primary-25;
+  }
+
+  .recipe-filter__category {
+    @include TextBodyMedium($--neutral-700);
+    margin-left: 8px;
+  }
+}
+
+.recipe-filter__category-wrapper:not(:last-child) {
+  margin-bottom: 12px;
+}

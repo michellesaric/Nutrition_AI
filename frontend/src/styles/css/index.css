@@ -419,7 +419,51 @@
   line-height: 24px;
 }
 
-.recipe-list .recipe-list__main {
+.recipe-filter__category-title {
+  color: #4a4995;
+  font-family: "Recoleta Alt";
+  font-size: 16px;
+  line-height: normal;
+  margin-bottom: 8px;
+}
+
+.recipe-filter__category-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.recipe-filter__category-wrapper .recipe-filter__checkmark-box {
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  border: 1px solid #797979;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.recipe-filter__category-wrapper .checked {
+  border-color: #2a8460;
+  background-color: rgba(42, 132, 96, 0.25);
+}
+.recipe-filter__category-wrapper .recipe-filter__category {
+  color: #575757;
+  font-family: "Montserrat Medium";
+  font-size: 16px;
+  line-height: 24px;
+  margin-left: 8px;
+}
+
+.recipe-filter__category-wrapper:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.recipes .recipes__main {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -526,6 +570,228 @@
   font-family: "Montserrat Medium";
   font-size: 16px;
   line-height: 24px;
+}
+
+@font-face {
+  font-family: "Recoleta Alt";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff2) format("woff2"), url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff) format("woff");
+}
+@font-face {
+  font-family: "Montserrat Medium";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Medium.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Montserrat Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("truetype");
+}
+.recipe-filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 387px;
+  padding: 24px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  border-radius: 12px;
+  background: rgba(250, 250, 250, 0.4);
+}
+.recipe-filter .recipe-filter__title {
+  color: var(--color-heading, #095536);
+  font-family: "Recoleta Alt";
+  font-size: 24px;
+  line-height: normal;
+}
+.recipe-filter .recipe-filter__active-filters {
+  color: #575757;
+  font-family: "Montserrat Medium";
+  font-size: 12px;
+  line-height: 18px;
+  margin-bottom: 24px;
+}
+.recipe-filter .recipe-filter__categories {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 28px;
+}
+.recipe-filter .recipe-filter__button {
+  margin-top: 28px;
+  padding: 8px 24px;
+  border-radius: 99px;
+  border: none;
+  background: #2a8460;
+  color: #fff;
+  font-family: "Recoleta Alt";
+  font-size: 16px;
+  line-height: normal;
+}
+
+@font-face {
+  font-family: "Recoleta Alt";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff2) format("woff2"), url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff) format("woff");
+}
+@font-face {
+  font-family: "Montserrat Medium";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Medium.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Montserrat Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("truetype");
+}
+.recipe-actions {
+  width: 1200px;
+}
+.recipe-actions .recipe-actions__ingredients {
+  margin-bottom: 22px;
+}
+.recipe-actions .recipe-actions__ingredients .recipe-actions__title {
+  color: #575757;
+  font-family: "Montserrat Medium";
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 8px;
+}
+.recipe-actions .recipe-actions__ingredients .recipe-actions__ingredients-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.recipe-actions .recipe-actions__ingredients .recipe-actions__ingredients-wrapper .recipe-actions__ingredient-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 8px 16px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 99px;
+  border: 1px solid rgba(215, 215, 215, 0.4);
+}
+.recipe-actions .recipe-actions__ingredients .recipe-actions__ingredients-wrapper .recipe-actions__ingredient-box .recipe-actions__ingredient {
+  color: #575757;
+  font-family: "Montserrat Medium";
+  font-size: 16px;
+  line-height: 24px;
+  margin-right: 8px;
+}
+.recipe-actions .recipe-actions__sort-download .recipe-actions__sort {
+  width: 317px;
+}
+.recipe-actions .recipe-actions__sort-download .recipe-actions__sort .recipe-actions__sort-text {
+  color: #000;
+  font-family: "Montserrat Medium";
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 4px;
+}
+.recipe-actions .recipe-actions__sort-download .recipe-actions__sort .recipe-actions__sort-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 12px 16px 12px 24px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 99px;
+  border: 1px solid rgba(215, 215, 215, 0.4);
+  background: #fff;
+}
+.recipe-actions .recipe-actions__sort-download .recipe-actions__sort .recipe-actions__sort-box .recipe-actions__sort-input {
+  color: #2c2c2c;
+  font-family: "Montserrat Medium";
+  font-size: 16px;
+  line-height: 24px;
+  width: 100%;
+  border: none;
+}
+.recipe-actions .recipe-actions__sort-download .recipe-actions__sort .recipe-actions__sort-box .recipe-actions__sort-icon {
+  cursor: pointer;
+}
+.recipe-actions .recipe-actions__sort-download .recipe-actions__sort .recipe-actions__sort-box .recipe-actions__sort-reverse-icon {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+@font-face {
+  font-family: "Recoleta Alt";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff2) format("woff2"), url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff) format("woff");
+}
+@font-face {
+  font-family: "Montserrat Medium";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Medium.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Montserrat Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("truetype");
+}
+.parameters-list {
+  margin-top: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 18px;
+  border-radius: 24px;
+  border: 1px solid rgba(215, 215, 215, 0.4);
+  background: #fff;
+}
+.parameters-list .parameter {
+  color: #2c2c2c;
+  font-family: "Montserrat Medium";
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+}
+.parameters-list .parameter:hover {
+  background-color: rgba(250, 250, 250, 0.4);
 }
 
 * {
