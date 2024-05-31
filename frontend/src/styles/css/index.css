@@ -1922,6 +1922,223 @@
   margin-bottom: 108px;
 }
 
+@font-face {
+  font-family: "Recoleta Alt";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff2) format("woff2"), url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff) format("woff");
+}
+@font-face {
+  font-family: "Montserrat Medium";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Medium.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Montserrat Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("truetype");
+}
+.recipe-header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.recipe-header .recipe-header__container {
+  width: 1201px;
+  padding: 24px;
+  border-radius: 12px;
+  background: #f5f5f5;
+  margin-top: 82px;
+}
+.recipe-header .recipe-header__container .recipe-header__image-title-link-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: 24px;
+}
+.recipe-header .recipe-header__container .recipe-header__image-title-link-wrapper .recipe-header__image-title-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.recipe-header .recipe-header__container .recipe-header__image-title-link-wrapper .recipe-header__image-title-wrapper .recipe-header__image {
+  height: 97px;
+  width: 158px;
+  background: url(../../assets/images/RecipeImage.png);
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-size: cover;
+  border-radius: 16px;
+  margin-right: 28px;
+}
+.recipe-header .recipe-header__container .recipe-header__image-title-link-wrapper .recipe-header__image-title-wrapper .recipe-header__recipe-title {
+  color: var(--color-heading, #095536);
+  font-family: "Recoleta Alt";
+  font-size: 54px;
+  line-height: normal;
+}
+.recipe-header .recipe-header__container .recipe-header__image-title-link-wrapper .recipe-header__image-title-wrapper .recipe__serving-calories-reviews-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.recipe-header .recipe-header__container .recipe-header__image-title-link-wrapper .recipe-header__image-title-wrapper .recipe__serving-calories-reviews-wrapper .recipe__serving,
+.recipe-header .recipe-header__container .recipe-header__image-title-link-wrapper .recipe-header__image-title-wrapper .recipe__serving-calories-reviews-wrapper .recipe__calories,
+.recipe-header .recipe-header__container .recipe-header__image-title-link-wrapper .recipe-header__image-title-wrapper .recipe__serving-calories-reviews-wrapper .recipe__reviews {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.recipe-header .recipe-header__container .recipe-header__image-title-link-wrapper .recipe-header__image-title-wrapper .recipe__serving-calories-reviews-wrapper .recipe__serving-text,
+.recipe-header .recipe-header__container .recipe-header__image-title-link-wrapper .recipe-header__image-title-wrapper .recipe__serving-calories-reviews-wrapper .recipe__calories-text,
+.recipe-header .recipe-header__container .recipe-header__image-title-link-wrapper .recipe-header__image-title-wrapper .recipe__serving-calories-reviews-wrapper .recipe__reviews-text {
+  color: #797979;
+  font-family: "Montserrat Medium";
+  font-size: 12px;
+  line-height: 18px;
+  margin-left: 2px;
+}
+.recipe-header .recipe-header__container .recipe-header__image-title-link-wrapper .recipe-header__image-title-wrapper .recipe__serving-calories-reviews-wrapper .recipe__serving-text span,
+.recipe-header .recipe-header__container .recipe-header__image-title-link-wrapper .recipe-header__image-title-wrapper .recipe__serving-calories-reviews-wrapper .recipe__calories-text span,
+.recipe-header .recipe-header__container .recipe-header__image-title-link-wrapper .recipe-header__image-title-wrapper .recipe__serving-calories-reviews-wrapper .recipe__reviews-text span {
+  color: #797979;
+  font-family: "Montserrat Bold";
+  font-size: 12px;
+  line-height: 18px;
+}
+.recipe-header .recipe-header__container .recipe-header__image-title-link-wrapper .recipe__link {
+  color: #5c61e1;
+  font-family: "Montserrat Medium";
+  font-size: 12px;
+  line-height: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+.recipe-header .recipe-header__container .recipe-header__ingredients-category-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.recipe-header .recipe-header__container .recipe-header__ingredients-category-wrapper .recipe-header__ingredients-wrapper .recipe-header__ingredients-title {
+  color: #575757;
+  font-family: "Montserrat Medium";
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 8px;
+}
+.recipe-header .recipe-header__container .recipe-header__ingredients-category-wrapper .recipe-header__ingredients-wrapper .recipe-header__ingredients {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 12px;
+}
+.recipe-header .recipe-header__container .recipe-header__ingredients-category-wrapper .recipe-header__ingredients-wrapper .recipe-header__ingredients .recipe-header__ingredient {
+  padding: 8px 16px;
+  border-radius: 99px;
+  border: 1px solid #d7d7d7;
+  color: #575757;
+  font-family: "Montserrat Medium";
+  font-size: 16px;
+  line-height: 24px;
+}
+.recipe-header .recipe-header__container .recipe-header__ingredients-category-wrapper .recipe-header__category {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 4px 12px;
+  border-radius: 99px;
+  background: rgba(42, 132, 96, 0.25);
+  color: #095536;
+  font-family: "Montserrat Medium";
+  font-size: 12px;
+  line-height: 18px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+@media screen and (max-width: 1240px) {
+  .recipe-header .recipe-header__container {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 940px) {
+  .recipe-header .recipe-header__container .recipe-header__image-title-link-wrapper .recipe-header__image-title-wrapper .recipe-header__recipe-title {
+    color: var(--color-heading, #095536);
+    font-family: "Recoleta Alt";
+    font-size: 36px;
+    line-height: normal;
+  }
+}
+@media screen and (max-width: 780px) {
+  .recipe-header .recipe-header__container .recipe-header__image-title-link-wrapper .recipe-header__image-title-wrapper .recipe-header__recipe-title {
+    color: var(--color-heading, #095536);
+    font-family: "Recoleta Alt";
+    font-size: 24px;
+    line-height: normal;
+  }
+}
+@media screen and (max-width: 740px) {
+  .recipe-header .recipe-header__container .recipe-header__image-title-link-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 10px;
+  }
+}
+@media screen and (max-width: 540px) {
+  .recipe-header .recipe-header__container .recipe-header__image-title-link-wrapper {
+    gap: 0;
+  }
+  .recipe-header .recipe-header__container .recipe-header__image-title-link-wrapper .recipe-header__image-title-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 20px;
+  }
+}
 * {
   margin: 0;
   padding: 0;

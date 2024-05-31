@@ -1,0 +1,173 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins/fontMixin";
+
+.recipe-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .recipe-header__container {
+    width: 1201px;
+    padding: 24px;
+    border-radius: 12px;
+    background: $--neutral-200;
+    margin-top: 82px;
+
+    .recipe-header__image-title-link-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 24px;
+
+      .recipe-header__image-title-wrapper {
+        display: flex;
+
+        .recipe-header__image {
+          height: 97px;
+          width: 158px;
+          background: url(../../assets/images/RecipeImage.png);
+          object-fit: contain;
+          background-size: cover;
+          border-radius: 16px;
+          margin-right: 28px;
+        }
+
+        .recipe-header__recipe-title {
+          @include HeadingOne();
+        }
+
+        .recipe__serving-calories-reviews-wrapper {
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 8px;
+          margin-bottom: 20px;
+
+          .recipe__serving,
+          .recipe__calories,
+          .recipe__reviews {
+            display: flex;
+            align-items: center;
+          }
+
+          .recipe__serving-text,
+          .recipe__calories-text,
+          .recipe__reviews-text {
+            @include TextSmallMedium($--neutral-600);
+            margin-left: 2px;
+          }
+
+          .recipe__serving-text span,
+          .recipe__calories-text span,
+          .recipe__reviews-text span {
+            @include TextSmallBold($--neutral-600);
+          }
+        }
+      }
+
+      .recipe__link {
+        @include TextSmallMedium($--color-info);
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        margin-bottom: 16px;
+      }
+    }
+
+    .recipe-header__ingredients-category-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      .recipe-header__ingredients-wrapper {
+        .recipe-header__ingredients-title {
+          @include TextBodyMedium($--neutral-700);
+          margin-bottom: 8px;
+        }
+
+        .recipe-header__ingredients {
+          display: flex;
+          gap: 12px;
+
+          .recipe-header__ingredient {
+            padding: 8px 16px;
+            border-radius: 99px;
+            border: 1px solid $--neutral-300;
+            @include TextBodyMedium($--neutral-700);
+          }
+        }
+      }
+
+      .recipe-header__category {
+        display: inline-flex;
+        align-items: center;
+        padding: 4px 12px;
+        border-radius: 99px;
+        background: $--primary-25;
+        @include TextSmallMedium($--color-heading);
+        width: fit-content;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .recipe-header {
+    .recipe-header__container {
+      width: 90%;
+    }
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .recipe-header {
+    .recipe-header__container {
+      .recipe-header__image-title-link-wrapper {
+        .recipe-header__image-title-wrapper {
+          .recipe-header__recipe-title {
+            @include HeadingTwo();
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .recipe-header {
+    .recipe-header__container {
+      .recipe-header__image-title-link-wrapper {
+        .recipe-header__image-title-wrapper {
+          .recipe-header__recipe-title {
+            @include HeadingThree();
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .recipe-header {
+    .recipe-header__container {
+      .recipe-header__image-title-link-wrapper {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .recipe-header {
+    .recipe-header__container {
+      .recipe-header__image-title-link-wrapper {
+        gap: 0;
+        .recipe-header__image-title-wrapper {
+          flex-direction: column;
+          gap: 20px;
+        }
+      }
+    }
+  }
+}
