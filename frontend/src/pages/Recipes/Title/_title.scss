@@ -15,3 +15,21 @@
     @include TextBodyMedium($--neutral-600);
   }
 }
+
+@media screen and (max-width: 1240px) {
+  .title {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .title {
+    .title__text {
+      @include HeadingTwo();
+    }
+
+    .title__subtext {
+      @include TextSmallMedium($--neutral-600);
+    }
+  }
+}

@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import HeaderBackground from "../../assets/images/HeaderBackground";
 import MediumIcon from "../icons/MediumIcon";
 import SearchBar from "../SearchBar/SearchBar";
-import HeaderBackgroundRecipe from "../../assets/images/HeaderBackgroundRecipe";
 
 const Header = () => {
   const [className, setClassName] = useState("header__link-wrapper");
@@ -21,11 +19,10 @@ const Header = () => {
 
   return (
     <header className="header">
-      {isHome ? (
-        <HeaderBackground className="header__background" />
-      ) : (
-        <HeaderBackgroundRecipe />
-      )}
+      <div
+        className="header__background"
+        style={{ height: !isHome && "70px" }}
+      ></div>
       <div className="header__wrapper">
         <div className="header__link-logo-wrapper">
           <Link to="/" className="header__logo">

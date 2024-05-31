@@ -32,3 +32,27 @@
     cursor: pointer;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .search-bar {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .search-bar {
+    padding: 12px 8px 12px 12px;
+
+    .search-bar__wrapper {
+      .search-bar__input {
+        @include TextSmallMedium(var(--neutral-600));
+      }
+    }
+    .search-bar__button {
+      padding: 6px 12px;
+      background: var(--color-primary, #2a8460);
+      @include TextSmallBold(#ffffff);
+      cursor: pointer;
+    }
+  }
+}

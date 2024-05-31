@@ -19,7 +19,22 @@
 
     .recipe-card__cards {
       display: flex;
+      gap: 20px;
       justify-content: space-between;
+    }
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .recipe-card-list {
+    .recipe-card-container {
+      width: fit-content;
+      padding: 0px 20px;
+
+      .recipe-card__cards {
+        flex-direction: column;
+        width: fit-content;
+      }
     }
   }
 }

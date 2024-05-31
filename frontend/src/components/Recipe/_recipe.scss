@@ -16,6 +16,7 @@
     height: 100%;
     width: 182px;
     background: url(../../assets/images/RecipeImage.png);
+    background-size: cover;
     object-fit: cover;
   }
 
@@ -53,6 +54,7 @@
     .recipe__serving-calories-reviews-wrapper {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
       gap: 8px;
       margin-bottom: 20px;
 
@@ -219,4 +221,50 @@
 
 .recipe:hover {
   background: $--neutral-300;
+}
+
+@media screen and (max-width: 1240px) {
+  .recipe {
+    width: auto;
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .recipe {
+    flex-direction: column;
+
+    .recipe__image {
+      display: block;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      height: 100px;
+      width: 100%;
+      background: url(../../assets/images/RecipeCard.png);
+      background-size: cover;
+      object-fit: cover;
+    }
+
+    .recipe__content {
+      .recipe__category-button-wrapper {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .recipe__macros {
+        gap: 8px;
+
+        .recipe__carbs-box,
+        .recipe__fats-box,
+        .recipe__proteins-box {
+          padding: 0;
+          border-radius: none;
+          border: none;
+          background: $--neutral-100;
+          width: 100%;
+        }
+      }
+    }
+  }
 }

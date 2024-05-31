@@ -17,8 +17,6 @@ const RecipeActions = ({ sortString, setSortString }) => {
     setToggle((prevToggle) => !prevToggle);
   };
 
-  console.log(sortString);
-
   return (
     <section className="recipe-actions">
       <div className="recipe-actions__ingredients">

@@ -15,6 +15,7 @@
     .recipe-actions__ingredients-wrapper {
       display: flex;
       flex-wrap: wrap;
+      gap: 12px;
 
       .recipe-actions__ingredient-box {
         display: flex;
@@ -34,6 +35,8 @@
   .recipe-actions__sort-download {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
 
     .recipe-actions__sort {
       width: 317px;
@@ -84,6 +87,37 @@
         background: $--color-secondary;
         @include HeadingFive($--neutral-100);
         cursor: pointer;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .recipe-actions {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .recipe-actions {
+    .recipe-actions__sort-download {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .recipe-actions__sort {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 516px) {
+  .recipe-actions {
+    .recipe-actions__sort-download {
+      .recipe-actions__download {
+        .recipe-actions__download-button {
+          margin-bottom: 12px;
+        }
       }
     }
   }

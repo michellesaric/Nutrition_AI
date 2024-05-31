@@ -50,3 +50,19 @@
     @include TextSmallMedium($--neutral-700);
   }
 }
+
+@media screen and (max-width: 600px) {
+  .recipe__additional-info {
+    .recipe__additional-info-wrapper {
+      width: 100%;
+
+      .recipe__additional-info-wrap {
+        width: 100%;
+      }
+
+      .recipe__additional-info-score {
+        margin-left: 20px;
+      }
+    }
+  }
+}

@@ -9,7 +9,7 @@
   padding: 20px 24px;
   border-radius: 12px;
   background-color: $--highlight-10;
-  margin: 24px 0px 32px;
+  margin: 84px 0px 32px;
 
   .notification__text {
     @include HeadingFive($--color-highlight);
@@ -22,5 +22,22 @@
     @include HeadingFive($--neutral-100);
     border: none;
     cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .notification {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .notification {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .notification__button {
+      margin-top: 20px;
+    }
   }
 }

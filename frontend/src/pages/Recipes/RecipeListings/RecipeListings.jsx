@@ -8,7 +8,7 @@ const RecipeListings = () => {
   const [sortString, setSortString] = useState("");
 
   return (
-    <div>
+    <>
       <RecipeActions sortString={sortString} setSortString={setSortString} />
       <div className="recipe-listings">
         <RecipeFilter
@@ -17,7 +17,7 @@ const RecipeListings = () => {
         />
         <RecipeList />
       </div>
-    </div>
+    </>
   );
 };
 

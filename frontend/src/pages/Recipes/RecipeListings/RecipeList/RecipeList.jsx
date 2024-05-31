@@ -5,7 +5,7 @@ const RecipeList = () => {
   return (
     <section className="recipe-list">
       {recipeList.map((recipe) => {
-        return <Recipe recipe={recipe} />;
+        return <Recipe key={recipe.id} recipe={recipe} />;
       })}
     </section>
   );

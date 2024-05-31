@@ -3,3 +3,16 @@
   display: flex;
   justify-content: space-between;
 }
+
+@media screen and (max-width: 1240px) {
+  .recipe-listings {
+    width: 90%;
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .recipe-listings {
+    flex-direction: column;
+  }
+}

@@ -6,11 +6,13 @@
   flex-direction: column;
   border-radius: 12px;
   background: $--neutral-200;
+  width: fit-content;
 
   .recipe-card__image {
     height: 100px;
     width: 385px;
     background: url(../../assets/images/RecipeCard.png);
+    object-fit: cover;
   }
 
   .recipe-card__content {
@@ -93,6 +95,19 @@
         @include HeadingFive($--neutral-700);
         cursor: pointer;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .recipe-card {
+    .recipe-card__image {
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      height: 100px;
+      width: 335px;
+      background: url(../../assets/images/RecipeCard.png);
+      object-fit: cover;
     }
   }
 }
