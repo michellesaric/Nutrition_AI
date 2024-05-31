@@ -202,7 +202,6 @@
 
       .recipe__nutrients {
         @include TextBodyBold($--color-secondary);
-        margin-bottom: 20px;
         border: none;
         background: none;
         cursor: pointer;

@@ -1,0 +1,98 @@
+@import "../../styles/variables";
+@import "../../styles/mixins/fontMixin";
+
+.recipe-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  background: $--neutral-200;
+
+  .recipe-card__image {
+    height: 100px;
+    width: 385px;
+    background: url(../../assets/images/RecipeCard.png);
+  }
+
+  .recipe-card__content {
+    height: 252px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .recipe-card__category {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      height: 26px;
+      border-radius: 99px;
+      background: $--primary-25;
+      @include TextSmallMedium($--color-heading);
+      width: fit-content;
+      margin-bottom: 8px;
+    }
+
+    .recipe-card__title {
+      @include HeadingFour();
+    }
+
+    .recipe__serving-calories-reviews-wrapper {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 300px;
+      gap: 8px;
+      margin-bottom: 20px;
+
+      .recipe__serving,
+      .recipe__calories,
+      .recipe__reviews {
+        display: flex;
+        align-items: center;
+      }
+
+      .recipe__serving-text,
+      .recipe__calories-text,
+      .recipe__reviews-text {
+        @include TextSmallMedium($--neutral-600);
+        margin-left: 2px;
+      }
+
+      .recipe__serving-text span,
+      .recipe__calories-text span,
+      .recipe__reviews-text span {
+        @include TextSmallBold($--neutral-600);
+      }
+    }
+
+    .recipe__link {
+      @include TextSmallMedium($--color-info);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 16px;
+    }
+
+    .recipe__buttons {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .recipe__nutrients {
+        @include TextBodyBold($--color-secondary);
+        border: none;
+        background: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+      }
+
+      .recipe__view-recipe {
+        border: none;
+        background: none;
+        @include HeadingFive($--neutral-700);
+        cursor: pointer;
+      }
+    }
+  }
+}
