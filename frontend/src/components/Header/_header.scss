@@ -54,7 +54,7 @@
         display: flex;
 
         .header__link {
-          @include HeadingThree();
+          @include HeadingThree($--primary-50);
           cursor: pointer;
         }
 
@@ -114,7 +114,7 @@
 
         .header__link-wrapper {
           .header__link {
-            @include HeadingFour();
+            @include HeadingFour($--primary-50);
           }
 
           .header__link:not(:last-child) {
@@ -156,7 +156,7 @@
           z-index: 1;
 
           .header__link {
-            @include HeadingThree();
+            @include HeadingThree($--primary-50);
             cursor: pointer;
           }
 

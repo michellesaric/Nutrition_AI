@@ -131,7 +131,7 @@
   display: flex;
 }
 .header .header__wrapper .header__link-logo-wrapper .header__link-wrapper .header__link {
-  color: var(--color-heading, #095536);
+  color: rgba(42, 132, 96, 0.5);
   font-family: "Recoleta Alt";
   font-size: 24px;
   line-height: normal;
@@ -191,7 +191,7 @@
     line-height: normal;
   }
   .header .header__wrapper .header__link-logo-wrapper .header__link-wrapper .header__link {
-    color: var(--color-heading, #095536);
+    color: rgba(42, 132, 96, 0.5);
     font-family: "Recoleta Alt";
     font-size: 20px;
     line-height: normal;
@@ -238,7 +238,7 @@
     z-index: 1;
   }
   .header .header__wrapper .header__link-logo-wrapper .header__link-wrapper-mobile .header__link {
-    color: var(--color-heading, #095536);
+    color: rgba(42, 132, 96, 0.5);
     font-family: "Recoleta Alt";
     font-size: 24px;
     line-height: normal;

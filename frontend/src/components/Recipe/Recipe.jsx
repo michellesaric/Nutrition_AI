@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import ServingIcon from "../icons/ServingIcon";
 import CalorieIcon from "../icons/CalorieIcon";
 import ReviewIcon from "../icons/ReviewIcon";
@@ -5,7 +7,6 @@ import Interpunct from "../icons/Interpunct";
 import LinkIcon from "../icons/LinkIcon";
 import HighIcon from "../icons/HighIcon";
 import ArrowDown from "../icons/ArrowDown";
-import { useState } from "react";
 import NutrientFacts from "../NutrientFacts/NutrientFacts";
 import RecipeAdditionalInfo from "../RecipeAdditionalInfo/RecipeAdditionalInfo";
 
@@ -156,7 +157,9 @@ const Recipe = ({ recipe }) => {
             <button className="recipe__nutrients" onClick={handleOpenModal}>
               View nutrients
             </button>
-            <button className="recipe__view-recipe">View recipe</button>
+            <Link to={`/recipe-details/${recipe.id}`}>
+              <button className="recipe__view-recipe">View recipe</button>
+            </Link>
           </div>
         </div>
       </div>
