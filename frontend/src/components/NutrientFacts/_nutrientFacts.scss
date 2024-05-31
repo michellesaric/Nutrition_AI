@@ -1,0 +1,109 @@
+@import "../../styles/mixins/fontMixin";
+@import "../../styles/variables";
+
+.nutrient-facts {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  z-index: 1000;
+
+  .nutrient-facts__box {
+    margin-top: 200px;
+    width: 800px;
+    padding: 32px;
+    border-radius: 12px;
+    background: $--neutral-100;
+
+    .nutrient-facts__title-icon-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .nutrient-facts__title {
+        @include HeadingTwo();
+        margin-bottom: 8px;
+      }
+    }
+
+    .nutrient-facts__recipe-title,
+    .nutrient-facts__recipe-servings {
+      @include TextBodyMedium($--neutral-700);
+    }
+
+    .nutrient-facts__recipe-servings {
+      margin-bottom: 12px;
+    }
+
+    .nutrient-facts__calorie-wrap {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 13px;
+
+      .nutrient-facts__calorie-text {
+        @include HeadingFour();
+      }
+      .nutrient-facts__calories {
+        @include HeadingTwo();
+      }
+    }
+
+    .nutrient-facts__daily-value {
+      width: 100%;
+      padding: 8px 16px;
+      border-radius: 12px;
+      background: $--primary-25;
+      display: flex;
+      justify-content: flex-end;
+      @include TextBodyMedium($--neutral-800);
+      margin-bottom: 12px;
+    }
+
+    .extra-margin {
+      margin-bottom: 24px;
+    }
+
+    .nutrient-facts__explanation {
+      @include TextBodyMedium($--neutral-800);
+      margin-bottom: 16px;
+    }
+
+    .nutrient-facts__tag {
+      @include TextBodyBold($--neutral-800);
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .nutrient-facts {
+    .nutrient-facts__box {
+      width: 90%;
+    }
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .nutrient-facts {
+    .nutrient-facts__box {
+      margin-top: 300px;
+
+      .nutrient-facts__calorie-wrap {
+        .nutrient-facts__calorie-text {
+          @include HeadingFour();
+        }
+        .nutrient-facts__calories {
+          @include HeadingThree();
+        }
+      }
+    }
+  }
+}

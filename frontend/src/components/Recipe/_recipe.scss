@@ -22,11 +22,12 @@
 
   .recipe__content {
     width: 100%;
+    padding: 20px;
     .recipe__category-button-wrapper {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin: 20px 0px 8px;
+      margin-bottom: 8px;
 
       .recipe__category {
         display: flex;

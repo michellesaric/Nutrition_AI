@@ -553,6 +553,7 @@
 }
 .recipe .recipe__content {
   width: 100%;
+  padding: 20px;
 }
 .recipe .recipe__content .recipe__category-button-wrapper {
   display: -webkit-box;
@@ -564,7 +565,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 20px 0px 8px;
+  margin-bottom: 8px;
 }
 .recipe .recipe__content .recipe__category-button-wrapper .recipe__category {
   display: -webkit-box;
@@ -969,6 +970,11 @@
   line-height: 18px;
 }
 
+@media screen and (max-width: 1240px) {
+  .recipe__additional-info .recipe__additional-info-wrapper {
+    width: 100%;
+  }
+}
 @media screen and (max-width: 600px) {
   .recipe__additional-info .recipe__additional-info-wrapper {
     width: 100%;
@@ -1161,6 +1167,220 @@
     background: url(../../assets/images/RecipeCard.png);
     -o-object-fit: cover;
        object-fit: cover;
+  }
+}
+@font-face {
+  font-family: "Recoleta Alt";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff2) format("woff2"), url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff) format("woff");
+}
+@font-face {
+  font-family: "Montserrat Medium";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Medium.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Montserrat Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("truetype");
+}
+.nutrient__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #f5f5f5;
+}
+.nutrient__wrapper .nutrient__name-grams-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.nutrient__wrapper .nutrient__name-grams-wrapper .nutrient__name {
+  color: #575757;
+  font-family: "Montserrat Bold";
+  font-size: 16px;
+  line-height: 24px;
+  margin-right: 6px;
+}
+.nutrient__wrapper .nutrient__name-grams-wrapper .nutrient__grams {
+  color: #797979;
+  font-family: "Montserrat Medium";
+  font-size: 16px;
+  line-height: 24px;
+}
+.nutrient__wrapper .nutrient__precentage {
+  color: #2c2c2c;
+  font-family: "Montserrat Medium";
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@font-face {
+  font-family: "Recoleta Alt";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff2) format("woff2"), url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff) format("woff");
+}
+@font-face {
+  font-family: "Montserrat Medium";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Medium.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Montserrat Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("truetype");
+}
+.nutrient-facts {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow-y: auto;
+  z-index: 1000;
+}
+.nutrient-facts .nutrient-facts__box {
+  margin-top: 200px;
+  width: 800px;
+  padding: 32px;
+  border-radius: 12px;
+  background: #fff;
+}
+.nutrient-facts .nutrient-facts__box .nutrient-facts__title-icon-wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.nutrient-facts .nutrient-facts__box .nutrient-facts__title-icon-wrapper .nutrient-facts__title {
+  color: var(--color-heading, #095536);
+  font-family: "Recoleta Alt";
+  font-size: 36px;
+  line-height: normal;
+  margin-bottom: 8px;
+}
+.nutrient-facts .nutrient-facts__box .nutrient-facts__recipe-title,
+.nutrient-facts .nutrient-facts__box .nutrient-facts__recipe-servings {
+  color: #575757;
+  font-family: "Montserrat Medium";
+  font-size: 16px;
+  line-height: 24px;
+}
+.nutrient-facts .nutrient-facts__box .nutrient-facts__recipe-servings {
+  margin-bottom: 12px;
+}
+.nutrient-facts .nutrient-facts__box .nutrient-facts__calorie-wrap {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 13px;
+}
+.nutrient-facts .nutrient-facts__box .nutrient-facts__calorie-wrap .nutrient-facts__calorie-text {
+  color: var(--color-heading, #095536);
+  font-family: "Recoleta Alt";
+  font-size: 20px;
+  line-height: normal;
+}
+.nutrient-facts .nutrient-facts__box .nutrient-facts__calorie-wrap .nutrient-facts__calories {
+  color: var(--color-heading, #095536);
+  font-family: "Recoleta Alt";
+  font-size: 36px;
+  line-height: normal;
+}
+.nutrient-facts .nutrient-facts__box .nutrient-facts__daily-value {
+  width: 100%;
+  padding: 8px 16px;
+  border-radius: 12px;
+  background: rgba(42, 132, 96, 0.25);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  color: #2c2c2c;
+  font-family: "Montserrat Medium";
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 12px;
+}
+.nutrient-facts .nutrient-facts__box .extra-margin {
+  margin-bottom: 24px;
+}
+.nutrient-facts .nutrient-facts__box .nutrient-facts__explanation {
+  color: #2c2c2c;
+  font-family: "Montserrat Medium";
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 16px;
+}
+.nutrient-facts .nutrient-facts__box .nutrient-facts__tag {
+  color: #2c2c2c;
+  font-family: "Montserrat Bold";
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@media screen and (max-width: 900px) {
+  .nutrient-facts .nutrient-facts__box {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 620px) {
+  .nutrient-facts .nutrient-facts__box {
+    margin-top: 300px;
+  }
+  .nutrient-facts .nutrient-facts__box .nutrient-facts__calorie-wrap .nutrient-facts__calorie-text {
+    color: var(--color-heading, #095536);
+    font-family: "Recoleta Alt";
+    font-size: 20px;
+    line-height: normal;
+  }
+  .nutrient-facts .nutrient-facts__box .nutrient-facts__calorie-wrap .nutrient-facts__calories {
+    color: var(--color-heading, #095536);
+    font-family: "Recoleta Alt";
+    font-size: 24px;
+    line-height: normal;
   }
 }
 @font-face {

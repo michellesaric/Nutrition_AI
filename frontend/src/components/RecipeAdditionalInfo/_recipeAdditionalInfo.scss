@@ -51,6 +51,14 @@
   }
 }
 
+@media screen and (max-width: 1240px) {
+  .recipe__additional-info {
+    .recipe__additional-info-wrapper {
+      width: 100%;
+    }
+  }
+}
+
 @media screen and (max-width: 600px) {
   .recipe__additional-info {
     .recipe__additional-info-wrapper {
