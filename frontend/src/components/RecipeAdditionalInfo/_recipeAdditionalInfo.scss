@@ -1,0 +1,52 @@
+@import "../../styles/variables";
+@import "../../styles/mixins/fontMixin";
+
+.recipe__additional-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+
+  .recipe__additional-info-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px;
+
+    .recipe__additional-info-wrap {
+      width: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .bullet-text-wrapper {
+        display: flex;
+        align-items: center;
+
+        .recipe__additional-info-bullet {
+          width: 12px;
+          height: 12px;
+          border-radius: 4px;
+          margin-right: 8px;
+          background-color: $--primary-50;
+        }
+
+        .blue {
+          background-color: $--secondary-50;
+        }
+
+        .recipe__additional-info-text {
+          @include TextSmallMedium($--neutral-700);
+        }
+      }
+    }
+
+    .recipe__additional-info-score {
+      @include TextSmallBold($--neutral-700);
+    }
+  }
+
+  .recipe__additional-info-extra-text {
+    @include TextSmallMedium($--neutral-700);
+  }
+}

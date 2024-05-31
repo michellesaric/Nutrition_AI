@@ -7,12 +7,16 @@
 @import "../components/SearchBar/searchBar";
 @import "../components/SearchBar/SearchResult/searchResult";
 @import "../components/CategorySection/categorySection";
+@import "../components/Recipe/recipe";
+@import "../components/RecipeAdditionalInfo/recipeAdditionalInfo";
 @import "../pages/Recipes/recipes";
 @import "../pages/Recipes/Notification/notification";
 @import "../pages/Recipes/Title/title";
 @import "../pages/Recipes/RecipeListings/RecipeFilter/recipeFilter";
 @import "../pages/Recipes/RecipeListings/RecipeActions/recipeActions";
 @import "../pages/Recipes/RecipeListings/RecipeActions/RecipeActionsSort/recipeActionsSort";
+@import "../pages/Recipes/RecipeListings/recipeListings";
+@import "../pages/Recipes/RecipeListings/RecipeList/recipeList";
 
 * {
   margin: 0;

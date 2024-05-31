@@ -463,6 +463,419 @@
   margin-bottom: 12px;
 }
 
+@font-face {
+  font-family: "Recoleta Alt";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff2) format("woff2"), url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff) format("woff");
+}
+@font-face {
+  font-family: "Montserrat Medium";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Medium.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Montserrat Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("truetype");
+}
+.recipe {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 793px;
+  padding-right: 16px;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  gap: 20px;
+  border-radius: 12px;
+  background: rgba(250, 250, 250, 0.4);
+}
+.recipe .recipe__image {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  height: 100%;
+  width: 182px;
+  background: url(../../assets/images/RecipeImage.png);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.recipe .recipe__content {
+  width: 100%;
+}
+.recipe .recipe__content .recipe__category-button-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 20px 0px 8px;
+}
+.recipe .recipe__content .recipe__category-button-wrapper .recipe__category {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 4px 12px;
+  height: 26px;
+  border-radius: 99px;
+  background: rgba(42, 132, 96, 0.25);
+  color: #095536;
+  font-family: "Montserrat Medium";
+  font-size: 12px;
+  line-height: 18px;
+}
+.recipe .recipe__content .recipe__category-button-wrapper .recipe__button {
+  padding: 8px 24px;
+  border-radius: 99px;
+  background: #2a8460;
+  color: #fff;
+  font-family: "Recoleta Alt";
+  font-size: 16px;
+  line-height: normal;
+  border: none;
+}
+.recipe .recipe__content .recipe__title {
+  color: #095536;
+  font-family: "Recoleta Alt";
+  font-size: 20px;
+  line-height: normal;
+}
+.recipe .recipe__content .recipe__serving-calories-reviews-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.recipe .recipe__content .recipe__serving-calories-reviews-wrapper .recipe__serving,
+.recipe .recipe__content .recipe__serving-calories-reviews-wrapper .recipe__calories,
+.recipe .recipe__content .recipe__serving-calories-reviews-wrapper .recipe__reviews {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.recipe .recipe__content .recipe__serving-calories-reviews-wrapper .recipe__serving-text,
+.recipe .recipe__content .recipe__serving-calories-reviews-wrapper .recipe__calories-text,
+.recipe .recipe__content .recipe__serving-calories-reviews-wrapper .recipe__reviews-text {
+  color: #797979;
+  font-family: "Montserrat Medium";
+  font-size: 12px;
+  line-height: 18px;
+  margin-left: 2px;
+}
+.recipe .recipe__content .recipe__serving-calories-reviews-wrapper .recipe__serving-text span,
+.recipe .recipe__content .recipe__serving-calories-reviews-wrapper .recipe__calories-text span,
+.recipe .recipe__content .recipe__serving-calories-reviews-wrapper .recipe__reviews-text span {
+  color: #797979;
+  font-family: "Montserrat Bold";
+  font-size: 12px;
+  line-height: 18px;
+}
+.recipe .recipe__content .recipe__link {
+  color: #5c61e1;
+  font-family: "Montserrat Medium";
+  font-size: 12px;
+  line-height: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+.recipe .recipe__content .divider {
+  width: 12px;
+  height: 4px;
+  border-radius: 99px;
+  background: #f89e52;
+}
+.recipe .recipe__content .recipe__macros-title {
+  color: #575757;
+  font-family: "Montserrat Medium";
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 6px;
+}
+.recipe .recipe__content .recipe__macros {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.recipe .recipe__content .recipe__macros .recipe__carbs-box,
+.recipe .recipe__content .recipe__macros .recipe__fats-box,
+.recipe .recipe__content .recipe__macros .recipe__proteins-box {
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(42, 132, 96, 0.25);
+  background: #fff;
+  width: 100%;
+}
+.recipe .recipe__content .recipe__macros .recipe__carbs,
+.recipe .recipe__content .recipe__macros .recipe__fats,
+.recipe .recipe__content .recipe__macros .recipe__proteins,
+.recipe .recipe__content .recipe__macros .recipe__carbs__results,
+.recipe .recipe__content .recipe__macros .recipe__fats__results,
+.recipe .recipe__content .recipe__macros .recipe__proteins__results {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.recipe .recipe__content .recipe__macros .recipe__carbs-title,
+.recipe .recipe__content .recipe__macros .recipe__fats-title,
+.recipe .recipe__content .recipe__macros .recipe__proteins-title {
+  color: #575757;
+  font-family: "Montserrat Medium";
+  font-size: 12px;
+  line-height: 18px;
+}
+.recipe .recipe__content .recipe__macros .recipe__carbs-score,
+.recipe .recipe__content .recipe__macros .recipe__fats-score,
+.recipe .recipe__content .recipe__macros .recipe__proteins-score {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.recipe .recipe__content .recipe__macros .recipe__carbs-score-text {
+  color: #ea4a5e;
+  font-family: "Montserrat Bold";
+  font-size: 12px;
+  line-height: 18px;
+}
+.recipe .recipe__content .recipe__macros .recipe__fats-score-text {
+  color: #5c61e1;
+  font-family: "Montserrat Bold";
+  font-size: 12px;
+  line-height: 18px;
+}
+.recipe .recipe__content .recipe__macros .recipe__proteins-score-text {
+  color: #f89e52;
+  font-family: "Montserrat Bold";
+  font-size: 12px;
+  line-height: 18px;
+}
+.recipe .recipe__content .recipe__macros .recipe__carbs__progress-bar,
+.recipe .recipe__content .recipe__macros .recipe__fats__progress-bar,
+.recipe .recipe__content .recipe__macros .recipe__proteins__progress-bar {
+  margin: 4px 0px;
+  border-radius: 99px;
+  background: rgba(215, 215, 215, 0.4);
+  height: 8px;
+}
+.recipe .recipe__content .recipe__macros .recipe__carbs__progress-bar .recipe__carbs__progress,
+.recipe .recipe__content .recipe__macros .recipe__fats__progress-bar .recipe__carbs__progress,
+.recipe .recipe__content .recipe__macros .recipe__proteins__progress-bar .recipe__carbs__progress {
+  height: 8px;
+  background: #ea4a5e;
+}
+.recipe .recipe__content .recipe__macros .recipe__carbs__progress-bar .recipe__fats__progress,
+.recipe .recipe__content .recipe__macros .recipe__fats__progress-bar .recipe__fats__progress,
+.recipe .recipe__content .recipe__macros .recipe__proteins__progress-bar .recipe__fats__progress {
+  height: 8px;
+  background: #5c61e1;
+}
+.recipe .recipe__content .recipe__macros .recipe__carbs__progress-bar .recipe__proteins__progress,
+.recipe .recipe__content .recipe__macros .recipe__fats__progress-bar .recipe__proteins__progress,
+.recipe .recipe__content .recipe__macros .recipe__proteins__progress-bar .recipe__proteins__progress {
+  height: 8px;
+  background: #f89e52;
+}
+.recipe .recipe__content .recipe__macros .recipe__carbs__percentage,
+.recipe .recipe__content .recipe__macros .recipe__carbs__grams,
+.recipe .recipe__content .recipe__macros .recipe__fats__percentage,
+.recipe .recipe__content .recipe__macros .recipe__fats__grams,
+.recipe .recipe__content .recipe__macros .recipe__proteins__percentage,
+.recipe .recipe__content .recipe__macros .recipe__proteins__grams {
+  color: #575757;
+  font-family: "Montserrat Medium";
+  font-size: 12px;
+  line-height: 18px;
+}
+.recipe .recipe__content .recipe__additional-scores .recipe__additional-score-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  color: #575757;
+  font-family: "Montserrat Medium";
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 24px;
+}
+.recipe .recipe__content .recipe__additional-scores .recipe__additional-score-icon {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.recipe .recipe__content .recipe__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.recipe .recipe__content .recipe__buttons .recipe__nutrients {
+  color: #4a4995;
+  font-family: "Montserrat Bold";
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.recipe .recipe__content .recipe__buttons .recipe__view-recipe {
+  border: none;
+  background: none;
+  color: #575757;
+  font-family: "Recoleta Alt";
+  font-size: 16px;
+  line-height: normal;
+  cursor: pointer;
+}
+
+.recipe:hover {
+  background: rgba(215, 215, 215, 0.4);
+}
+
+@font-face {
+  font-family: "Recoleta Alt";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff2) format("woff2"), url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff) format("woff");
+}
+@font-face {
+  font-family: "Montserrat Medium";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Medium.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Montserrat Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("truetype");
+}
+.recipe__additional-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.recipe__additional-info .recipe__additional-info-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 400px;
+}
+.recipe__additional-info .recipe__additional-info-wrapper .recipe__additional-info-wrap {
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.recipe__additional-info .recipe__additional-info-wrapper .recipe__additional-info-wrap .bullet-text-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.recipe__additional-info .recipe__additional-info-wrapper .recipe__additional-info-wrap .bullet-text-wrapper .recipe__additional-info-bullet {
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+  margin-right: 8px;
+  background-color: rgba(42, 132, 96, 0.5);
+}
+.recipe__additional-info .recipe__additional-info-wrapper .recipe__additional-info-wrap .bullet-text-wrapper .blue {
+  background-color: rgba(74, 73, 149, 0.5);
+}
+.recipe__additional-info .recipe__additional-info-wrapper .recipe__additional-info-wrap .bullet-text-wrapper .recipe__additional-info-text {
+  color: #575757;
+  font-family: "Montserrat Medium";
+  font-size: 12px;
+  line-height: 18px;
+}
+.recipe__additional-info .recipe__additional-info-wrapper .recipe__additional-info-score {
+  color: #575757;
+  font-family: "Montserrat Bold";
+  font-size: 12px;
+  line-height: 18px;
+}
+.recipe__additional-info .recipe__additional-info-extra-text {
+  color: #575757;
+  font-family: "Montserrat Medium";
+  font-size: 12px;
+  line-height: 18px;
+}
+
 .recipes .recipes__main {
   width: 100%;
   display: -webkit-box;
@@ -821,6 +1234,28 @@
 }
 .parameters-list .parameter:hover {
   background-color: rgba(250, 250, 250, 0.4);
+}
+
+.recipe-listings {
+  width: 1200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.recipe-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 24px;
+  margin-bottom: 108px;
 }
 
 * {
