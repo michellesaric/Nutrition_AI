@@ -1404,6 +1404,70 @@
   font-display: swap;
   src: url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("truetype");
 }
+.nutrient-card {
+  width: 100%;
+  padding: 12px 8px;
+  gap: 10px;
+  border-radius: 4px;
+}
+.nutrient-card .nutrient-card__nutrient-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.nutrient-card .nutrient-card__nutrient-wrapper .nutrient-card__nutrient-name {
+  color: #575757;
+  font-family: "Montserrat Medium";
+  font-size: 16px;
+  line-height: 24px;
+}
+.nutrient-card .nutrient-card__nutrient-wrapper .nutrient-card__nutrients {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+.nutrient-card .nutrient-card__nutrient-wrapper .nutrient-card__nutrients .nutrient-card__nutrient-grams {
+  color: #575757;
+  font-family: "Montserrat Medium";
+  font-size: 16px;
+  line-height: 24px;
+}
+.nutrient-card .nutrient-card__progress-bar {
+  width: 100%;
+  height: 8px;
+  border-radius: 99px;
+  background: #d7d7d7;
+}
+.nutrient-card .nutrient-card__progress-bar .nutrient-card__progress {
+  height: 8px;
+  border-radius: 99px;
+}
+
+@font-face {
+  font-family: "Recoleta Alt";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff2) format("woff2"), url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff) format("woff");
+}
+@font-face {
+  font-family: "Montserrat Medium";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Medium.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Montserrat Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("truetype");
+}
 .recipe-card-list {
   margin-top: 107px;
   width: 100%;
@@ -1939,6 +2003,20 @@
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+@media screen and (max-width: 800px) {
+  .recipe-details .recipe-details__aside {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -2565,6 +2643,167 @@
         -ms-flex-direction: column;
             flex-direction: column;
     gap: 12px;
+  }
+}
+@font-face {
+  font-family: "Recoleta Alt";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff2) format("woff2"), url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff) format("woff");
+}
+@font-face {
+  font-family: "Montserrat Medium";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Medium.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Montserrat Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("truetype");
+}
+.recipe-nutrient-balance {
+  width: 765px;
+  padding: 32px;
+  border-radius: 12px;
+  background: #f5f5f5;
+}
+.recipe-nutrient-balance .recipe-nutrient-balance__title-wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 28px;
+}
+.recipe-nutrient-balance .recipe-nutrient-balance__title-wrapper .recipe-nutrient-balance__title {
+  color: var(--color-heading, #095536);
+  font-family: "Recoleta Alt";
+  font-size: 36px;
+  line-height: normal;
+}
+.recipe-nutrient-balance .recipe-nutrient-balance__title-wrapper .divider {
+  width: 24px;
+  height: 6px;
+  border-radius: 99px;
+  background: #f89e52;
+}
+.recipe-nutrient-balance .recipe-nutrient-balance__macro-stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 29px;
+}
+.recipe-nutrient-balance .recipe-nutrient-balance__macro-stats .recipe-nutrient-balance__macros {
+  width: 361px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.recipe-nutrient-balance .recipe-nutrient-balance__macro-stats .recipe-nutrient-balance__macros .recipe-nutrient-balance__macro-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
+}
+.recipe-nutrient-balance .recipe-nutrient-balance__macro-stats .recipe-nutrient-balance__macros .recipe-nutrient-balance__macro-wrapper .carbs {
+  color: #2a8460;
+  font-family: "Montserrat Bold";
+  font-size: 16px;
+  line-height: 24px;
+}
+.recipe-nutrient-balance .recipe-nutrient-balance__macro-stats .recipe-nutrient-balance__macros .recipe-nutrient-balance__macro-wrapper .fat {
+  color: #4a4995;
+  font-family: "Montserrat Bold";
+  font-size: 16px;
+  line-height: 24px;
+}
+.recipe-nutrient-balance .recipe-nutrient-balance__macro-stats .recipe-nutrient-balance__macros .recipe-nutrient-balance__macro-wrapper .protein {
+  color: #f89e52;
+  font-family: "Montserrat Bold";
+  font-size: 16px;
+  line-height: 24px;
+}
+.recipe-nutrient-balance .recipe-nutrient-balance__macro-stats .recipe-nutrient-balance__macros .recipe-nutrient-balance__macro-wrapper .recipe-nutrient-balance__grams {
+  color: #575757;
+  font-family: "Recoleta Alt";
+  font-size: 24px;
+  line-height: normal;
+}
+.recipe-nutrient-balance .recipe-nutrient-balance__macro-stats .recipe-nutrient-balance__macros .recipe-nutrient-balance__macro-wrapper .recipe-nutrient-balance__macro-title {
+  color: #575757;
+  font-family: "Montserrat Medium";
+  font-size: 16px;
+  line-height: 24px;
+}
+.recipe-nutrient-balance .recipe-nutrient-balance__list .recipe-nutrient-balance__list-header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 12px 8px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 20px;
+  border-radius: 4px;
+  border-top: 1px solid #d7d7d7;
+  background: rgba(42, 132, 96, 0.25);
+}
+.recipe-nutrient-balance .recipe-nutrient-balance__list .recipe-nutrient-balance__list-header .recipe-nutrient-balance__header-title {
+  color: #575757;
+  font-family: "Montserrat Bold";
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@media screen and (max-width: 800px) {
+  .recipe-nutrient-balance {
+    width: 90%;
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .recipe-nutrient-balance .recipe-nutrient-balance__macro-stats {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .recipe-nutrient-balance .recipe-nutrient-balance__macro-stats .recipe-nutrient-balance__macros {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 20px;
   }
 }
 * {

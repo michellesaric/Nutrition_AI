@@ -1,0 +1,39 @@
+@import "../../styles/variables";
+@import "../../styles/mixins/fontMixin";
+
+.nutrient-card {
+  width: 100%;
+  padding: 12px 8px;
+  gap: 10px;
+  border-radius: 4px;
+
+  .nutrient-card__nutrient-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    .nutrient-card__nutrient-name {
+      @include TextBodyMedium($--neutral-700);
+    }
+
+    .nutrient-card__nutrients {
+      display: flex;
+      gap: 20px;
+
+      .nutrient-card__nutrient-grams {
+        @include TextBodyMedium($--neutral-700);
+      }
+    }
+  }
+
+  .nutrient-card__progress-bar {
+    width: 100%;
+    height: 8px;
+    border-radius: 99px;
+    background: $--neutral-300;
+
+    .nutrient-card__progress {
+      height: 8px;
+      border-radius: 99px;
+    }
+  }
+}

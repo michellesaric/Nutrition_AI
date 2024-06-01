@@ -4,6 +4,7 @@ import RecipeHeader from "./RecipeHeader/RecipeHeader";
 import RecipeGeneralInfo from "./RecipeGeneralInfo/RecipeGeneralInfo";
 import RecipeIngredients from "./RecipeIngredients/RecipeIngredients";
 import RecipeInstructions from "./RecipeInstructions/RecipeInstructions";
+import RecipeNutrientBalance from "./RecipeNutrientBalance/RecipeNutrientBalance";
 import { recipe } from "./recipeJS";
 
 const RecipeDetails = () => {
@@ -12,9 +13,10 @@ const RecipeDetails = () => {
       <Header />
       <RecipeHeader recipe={recipe} />
       <div className="recipe-details">
-        <div>
+        <div className="recipe-details__aside">
           <RecipeIngredients recipeIngredients={recipe.ingredients} />
           <RecipeInstructions recipe={recipe} />
+          <RecipeNutrientBalance recipe={recipe} />
         </div>
         <RecipeGeneralInfo recipe={recipe} />
       </div>
