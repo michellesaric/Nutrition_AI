@@ -54,3 +54,15 @@
     }
   }
 }
+
+@media screen and (max-width: 800px) {
+  .recipe-instructions {
+    width: 90%;
+    padding: 20px;
+
+    .recipe-instructions__title-time-wrapper {
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+}

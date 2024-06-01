@@ -153,6 +153,13 @@
   }
 }
 
+@media screen and (max-width: 1240px) {
+  .recipe-general-info {
+    position: static;
+    margin-left: 0;
+  }
+}
+
 @media screen and (max-width: 450px) {
   .recipe-general-info {
     width: 90%;
