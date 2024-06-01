@@ -1,0 +1,36 @@
+@import "../../../styles/mixins/fontMixin";
+@import "../../../styles/variables";
+
+.recipe-ingredients {
+  width: 765px;
+  margin-bottom: 48px;
+
+  .recipe-ingredients__title {
+    margin-top: 20px;
+    @include HeadingThree();
+  }
+
+  .divider {
+    width: 24px;
+    height: 6px;
+    border-radius: 99px;
+    background: $--color-highlight;
+    margin-bottom: 24px;
+  }
+
+  .recipe-ingredients__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .recipe-ingredients__ingredient {
+      @include TextBodyMedium($--neutral-700);
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .recipe-ingredients {
+    width: 90%;
+  }
+}
