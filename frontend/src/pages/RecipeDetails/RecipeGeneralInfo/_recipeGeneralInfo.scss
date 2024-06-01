@@ -1,0 +1,167 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins/fontMixin";
+
+.recipe-general-info {
+  width: 387px;
+  padding: 20px;
+  background: $--neutral-200;
+
+  .recipe-general-info__title-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+
+    .recipe-general-info__title {
+      @include HeadingThree();
+    }
+
+    .divider {
+      width: 12px;
+      height: 4px;
+      border-radius: 99px;
+      background: $--color-highlight;
+    }
+  }
+
+  .recipe-general-info__macro-title {
+    @include TextBodyMedium($--neutral-700);
+    margin-bottom: 8px;
+  }
+
+  .recipe__macros {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 34px;
+
+    .recipe__carbs-box,
+    .recipe__fats-box,
+    .recipe__proteins-box {
+      padding: 8px 12px;
+      border-radius: 12px;
+      border: 1px solid $--primary-25;
+      background: $--neutral-100;
+      width: 100%;
+    }
+
+    .recipe__carbs,
+    .recipe__fats,
+    .recipe__proteins,
+    .recipe__carbs__results,
+    .recipe__fats__results,
+    .recipe__proteins__results {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .recipe__carbs-title,
+    .recipe__fats-title,
+    .recipe__proteins-title {
+      @include TextSmallMedium($--neutral-700);
+    }
+
+    .recipe__carbs-score,
+    .recipe__fats-score,
+    .recipe__proteins-score {
+      display: flex;
+      align-items: center;
+    }
+
+    .recipe__carbs-score-text {
+      @include TextSmallBold($--color-error);
+    }
+    .recipe__fats-score-text {
+      @include TextSmallBold($--color-info);
+    }
+    .recipe__proteins-score-text {
+      @include TextSmallBold($--color-highlight);
+    }
+
+    .recipe__carbs__progress-bar,
+    .recipe__fats__progress-bar,
+    .recipe__proteins__progress-bar {
+      margin: 4px 0px;
+      border-radius: 99px;
+      background: $--neutral-300;
+      height: 8px;
+
+      .recipe__carbs__progress {
+        height: 8px;
+        border-radius: 99px;
+        background: $--color-error;
+      }
+      .recipe__fats__progress {
+        height: 8px;
+        border-radius: 99px;
+        background: $--color-info;
+      }
+      .recipe__proteins__progress {
+        height: 8px;
+        border-radius: 99px;
+        background: $--color-highlight;
+      }
+    }
+
+    .recipe__carbs__percentage,
+    .recipe__carbs__grams,
+    .recipe__fats__percentage,
+    .recipe__fats__grams,
+    .recipe__proteins__percentage,
+    .recipe__proteins__grams {
+      @include TextSmallMedium($--neutral-700);
+    }
+  }
+
+  .nrf {
+    margin-bottom: 34px;
+  }
+
+  .recipe-general-info__nrf-wrapper {
+    .recipe-general-info__nrf-title {
+      @include TextBodyMedium($--neutral-700);
+      margin-bottom: 8px;
+    }
+
+    .recipe-general-info__nrf-box {
+      display: flex;
+      justify-content: space-between;
+
+      .recipe-general-info__nrf-text-box {
+        width: 170px;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid $--primary-25;
+        background: $--neutral-100;
+
+        .recipe-general-info__nrf {
+          @include TextBodyBold($--color-info);
+          margin-bottom: 2px;
+        }
+
+        .recipe-general-info__nrf-text {
+          @include TextSmallMedium($--neutral-700);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .recipe-general-info {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .recipe-general-info {
+    .recipe-general-info__nrf-wrapper {
+      .recipe-general-info__nrf-box {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  }
+}

@@ -58,7 +58,10 @@ const RecipeHeader = ({ recipe }) => {
             <div className="recipe-header__ingredients">
               {search.map((serachedIngredients) => {
                 return (
-                  <div className="recipe-header__ingredient">
+                  <div
+                    key={serachedIngredients}
+                    className="recipe-header__ingredient"
+                  >
                     {serachedIngredients}
                   </div>
                 );
