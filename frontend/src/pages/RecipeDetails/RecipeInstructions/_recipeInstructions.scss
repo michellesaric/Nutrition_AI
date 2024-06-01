@@ -1,0 +1,56 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins/fontMixin";
+
+.recipe-instructions {
+  width: 765px;
+  margin-bottom: 127px;
+
+  .recipe-instructions__title-time-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+
+    .recipe-instructions__title {
+      @include HeadingThree();
+    }
+
+    .divider {
+      width: 24px;
+      height: 6px;
+      border-radius: 99px;
+      background: $--color-highlight;
+    }
+
+    .recipe-instructions__time-wrapper {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+
+      .recipe-instructions__time {
+        @include TextBodyMedium($--neutral-600);
+        margin-right: 6px;
+      }
+
+      .recipe-instructions__time span {
+        @include TextBodyBold($--neutral-700);
+      }
+    }
+  }
+
+  .recipe-instructions__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .recipe-instructions__instructions {
+      display: flex;
+      gap: 20px;
+
+      .recipe-instructions__step,
+      .recipe-instructions__instruction {
+        @include TextBodyMedium($--neutral-700);
+      }
+    }
+  }
+}

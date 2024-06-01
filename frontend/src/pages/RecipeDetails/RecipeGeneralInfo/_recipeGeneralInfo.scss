@@ -3,8 +3,12 @@
 
 .recipe-general-info {
   width: 387px;
+  height: fit-content;
   padding: 20px;
   background: $--neutral-200;
+  margin-left: 48px;
+  position: sticky;
+  top: 0;
 
   .recipe-general-info__title-wrapper {
     width: 100%;
