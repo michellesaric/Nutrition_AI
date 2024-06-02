@@ -12,6 +12,8 @@ import Home from "./pages/Home/Home";
 import Recipes from "./pages/Recipes/Recipes";
 import RecipeDetails from "./pages/RecipeDetails/RecipeDetails";
 import AdminDashboard from "./pages/AdminDashboard/AdminDashboard";
+import AdminAddIngredient from "./pages/AdminAddIngredient/AdminAddIngredient";
+import AdminAddRecipe from "./pages/AdminAddRecipe/AdminAddRecipe";
 import LoginForm from "./pages/Login/Login";
 
 const AdminRoute = ({ element, ...rest }) => {
@@ -33,6 +35,14 @@ const App = () => {
             <Route
               path="/admin-dashboard"
               element={<AdminRoute element={<AdminDashboard />} />}
+            />
+            <Route
+              path="/admin-add-recipe"
+              element={<AdminRoute element={<AdminAddRecipe />} />}
+            />
+            <Route
+              path="/admin-add-ingredient"
+              element={<AdminRoute element={<AdminAddIngredient />} />}
             />
           </Routes>
         </Router>

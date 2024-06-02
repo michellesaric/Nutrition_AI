@@ -17,8 +17,8 @@ const LoginForm = () => {
           password,
         }
       );
-      const userData = response.data; // Assuming backend returns user data
-      login({ username, isAdmin: true }); // Set the user data
+      console.log(response.data);
+      login({ username, isAdmin: true });
       window.location.href = "/admin-dashboard";
     } catch (error) {
       setError("Invalid username or password");
@@ -27,7 +27,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div>
+    <div className="">
       <input
         type="text"
         placeholder="Username"
