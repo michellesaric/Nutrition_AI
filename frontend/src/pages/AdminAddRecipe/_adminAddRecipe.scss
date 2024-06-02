@@ -1,0 +1,75 @@
+@import "../../styles/variables";
+@import "../../styles/mixins/fontMixin";
+
+.admin-add-recipe {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 101px;
+
+  .admin-add-recipe__wrapper {
+    width: 1064px;
+    padding: 96px;
+    border-radius: 32px;
+    background: $--neutral-200;
+
+    .admin-add-recipe__title-wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 48px;
+
+      .admin-add-recipe__title {
+        @include HeadingOne();
+      }
+
+      .admin-add-recipe__steps-wrapper {
+        display: flex;
+        gap: 12px;
+
+        .admin-add-recipe__step-name {
+          @include TextSmallMedium($--neutral-700);
+          margin-bottom: 4px;
+        }
+
+        .admin-add-recipe__step {
+          height: 5px;
+          width: 56px;
+          border-radius: 99px;
+        }
+      }
+    }
+
+    .admin-add-recipe__buttons {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      margin-top: 48px;
+
+      .admin-add-recipe__button {
+        padding: 12px 24px;
+        border-radius: 99px;
+        background: $--color-secondary;
+        border: none;
+        @include HeadingFive($--neutral-100);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .admin-add-recipe {
+    .admin-add-recipe__wrapper {
+      width: 90%;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .admin-add-recipe {
+    .admin-add-recipe__wrapper {
+      padding: 20px;
+    }
+  }
+}

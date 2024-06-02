@@ -11,29 +11,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 require_once 'backend/src/models/Admin.php';
+require_once 'backend/src/controllers/RecipeController.php';
+require_once 'backend/src/controllers/CategoryController.php';
+require_once 'backend/src/controllers/IngredientController.php'; 
 
 $adminCredentials = array(
     'admin' => 'admin'
 );
 
 $baseUri = '/Nutrition_AI/backend/public/index.php';
-
 $requestUri = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
+$requestMethod = $_SERVER['REQUEST_METHOD'];
 
 // Handle login request
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $requestUri === $baseUri . '/login') {
-    // Read the raw input
-    $input = file_get_contents("php://input");
-    $data = json_decode($input, true);
-
-    // Check if JSON decoding was successful and required fields are set
-    if (is_array($data) && isset($data['username']) && isset($data['password'])) {
-        $username = $data['username'];
-        $password = $data['password'];
-
-        // Debugging: print out the username and password
-        error_log("Username: " . $username);
-        error_log("Password: " . $password);
+if ($requestMethod === 'POST' && $requestUri === $baseUri . '/login') {
+    $input = json_decode(file_get_contents("php://input"), true);
+    if (isset($input['username']) && isset($input['password'])) {
+        $username = $input['username'];
+        $password = $input['password'];
 
         // Validate username and password
         if ($username === 'admin' && $password === 'admin') {
@@ -58,25 +53,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $requestUri === $baseUri . '/login'
     }
 }
 
-// Check if user is authenticated
-if (!isset($_SESSION['admin_id'])) {
-    http_response_code(401);
-    echo json_encode(['status' => 'error', 'message' => 'Unauthorized']);
-    exit();
-}
-
-// Include controllers and handle other requests
-require_once 'backend/src/controllers/RecipeController.php';
-require_once 'backend/src/controllers/CategoryController.php';
-require_once 'backend/src/controllers/IngredientController.php'; 
-
 $controller = new RecipeController();
 $categoryController = new CategoryController();
 $ingredientController = new IngredientController(); 
 
-if ($requestMethod === 'POST' && $requestUri === $baseUri . '/create-recipe') {
-    $controller->createRecipe();
-} elseif ($requestMethod === 'GET' && $requestUri === $baseUri . '/get-categories') {
+// Routes that do not require admin authentication
+if ($requestMethod === 'GET' && $requestUri === $baseUri . '/get-categories') {
     $categoryController->listAllCategories();
 } elseif ($requestMethod === 'GET' && $requestUri === $baseUri . '/get-ingredients') {
     if (isset($_GET['search'])) {
@@ -85,8 +67,20 @@ if ($requestMethod === 'POST' && $requestUri === $baseUri . '/create-recipe') {
     } else {
         $ingredientController->getAllIngredients();
     }
+}
+
+// Routes that require admin authentication
+else if (isset($_SESSION['admin_id'])) {
+    if ($requestMethod === 'POST' && $requestUri === $baseUri . '/create-recipe') {
+        $controller->createRecipe();
+    } elseif ($requestMethod === 'POST' && $requestUri === $baseUri . '/create-ingredient') {
+        $ingredientController->createIngredient();
+    } else {
+        http_response_code(404);
+        echo json_encode(['status' => 'error', 'message' => 'Endpoint not found']);
+    }
 } else {
-    http_response_code(404);
-    echo json_encode(['status' => 'error', 'message' => 'Endpoint not found']);
+    http_response_code(401);
+    echo json_encode(['status' => 'error', 'message' => 'Unauthorized']);
 }
 ?>

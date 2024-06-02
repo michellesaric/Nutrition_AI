@@ -33,6 +33,7 @@ const AdminHeader = () => {
               </div>
             </div>
           )}
+          {!isAdminDashboard && <div></div>}
         </div>
       </div>
     </header>

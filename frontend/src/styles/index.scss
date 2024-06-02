@@ -12,6 +12,7 @@
 @import "../components/NutrientFacts/nutrientFacts";
 @import "../components/NutrientCard/nutrientCard";
 @import "../components/AdminHeader/adminHeader";
+@import "../components/CategoryList/categoryList";
 @import "../pages/Home/home";
 @import "../pages/Recipes/recipes";
 @import "../pages/Recipes/Notification/notification";
@@ -27,6 +28,8 @@
 @import "../pages/RecipeDetails/RecipeIngredients/recipeIngredients";
 @import "../pages/RecipeDetails/RecipeInstructions/recipeInstructions";
 @import "../pages/RecipeDetails/RecipeNutrientBalance/recipeNutrientBalance";
+@import "../pages/AdminAddRecipe/adminAddRecipe";
+@import "../pages/AdminAddRecipe/AddRecipeStepOne/addRecipeStepOne";
 
 * {
   margin: 0;
