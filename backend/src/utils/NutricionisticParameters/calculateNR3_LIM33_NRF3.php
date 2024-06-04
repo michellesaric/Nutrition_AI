@@ -1,6 +1,7 @@
 <?php 
 
-require_once 'backend/src/utils/getDailyValue.php';
+require_once 'backend/src/utils/NutricionisticParameters/calculateFactor.php';
+require_once 'backend/src/utils/NutricionisticParameters/calculateWeightByCategory.php';
 
 function calculateNR3_LIM33_NRF3($recipeId) {
 

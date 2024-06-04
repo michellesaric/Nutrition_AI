@@ -7,7 +7,7 @@ function getFruitVeg($recipeId, $averageMeal100) {
   $query = "
         SELECT
             ri.ingredient_amount_weight_g,
-            cs.ingredient_category_id, 
+            cs.ingredient_category_id 
         FROM recipe_ingredient ri
         JOIN ingredient i ON ri.ingredient_id = i.id
         JOIN category_subcategory cs ON i.category_subcategory_id = cs.id

@@ -4,12 +4,12 @@ require_once 'backend/src/config/Database.php';
 function calculateAverageMeal($recipeId) {
   $db = Database::getInstance()->getConnection();
     
-  $query = `
+  $query = "
     SELECT
-         rn.ingredient_amount_weight_g
-    FROM recipe_ingredient rn
-    WHERE rn.recipe_id = ?
-  `;
+         ingredient_amount_weight_g
+    FROM recipe_ingredient 
+    WHERE recipe_id = ?
+  ";
     
   $stmt = $db->prepare($query);
   $stmt->bind_param('i', $recipeId);

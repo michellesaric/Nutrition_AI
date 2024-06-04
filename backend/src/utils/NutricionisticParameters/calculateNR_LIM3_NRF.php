@@ -1,7 +1,5 @@
 <?php 
-
-
-require_once 'backend/src/utils/getDailyValue.php';
+require_once 'backend/src/utils/NutricionisticParameters/calculateFactor.php';
 
 function calculateNR_LIM3_NRF($recipeId) {
 

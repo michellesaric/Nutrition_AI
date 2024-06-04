@@ -14,6 +14,7 @@ class Recipe {
   private $recipe;
   private $recipeHr;
   private $description;
+  private $url;
   private $rating;
   private $adjustedRating;
   private $score;
@@ -44,10 +45,11 @@ class Recipe {
   private $instructionsStepsTotal;
   private $categoryId;
 
-  public function __construct($recipe, $recipeHr, $description, $author, $prepTime, $cookTime, $readyTime, $servings, $categoryId) {
+  public function __construct($recipe, $recipeHr, $description, $url, $author, $prepTime, $cookTime, $readyTime, $servings, $categoryId) {
     $this->recipe = $recipe;
     $this->recipeHr = $recipeHr;
     $this->description = $description;
+    $this->url = $url;
     $this->author = $author;
     $this->prepTime = $prepTime;
     $this->cookTime = $cookTime;
@@ -58,11 +60,11 @@ class Recipe {
 
   public function saveAndGetId() {
     $db = Database::getInstance()->getConnection();
-    $query = "INSERT INTO recipes (recipe, recipeHr, description, author, prepTime, cookTime, readyTime, servings, categoryId, rating, adjustedRating, score, reviews, calories, instructionsStepsTotal, nr, lim3, nrf, nr2, lim32, nrf2, nr3, lim33, nrf3, carbPer, fatPer, proteinPer, totalPer, cumulativeScore1, cumulativeScore2, nutriScorePoints, nutriScore)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)";
+    $query = "INSERT INTO recipe (recipe, recipe_hr, description, url, author, prep_time, cook_time, ready_time, servings, category_id, rating, adjusted_rating, score, reviews, calories, instruction_steps_total, nr, lim3, nrf, nr2, lim32, nrf2, nr3, lim33, nrf3, carb_per, fat_per, protein_per, total_per, cumulative_score_1, cumulative_score_2, nutri_score_points, nutri_score)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)";
       
     $stmt = $db->prepare($query);
-    $stmt->bind_param('sssiiiii', $this->recipe, $this->recipeHr, $this->description, $this->author, $this->prepTime, $this->cookTime, $this->readyTime, $this->servings, $this->categoryId);
+    $stmt->bind_param('ssssssssii', $this->recipe, $this->recipeHr, $this->description, $this->url, $this->author, $this->prepTime, $this->cookTime, $this->readyTime, $this->servings, $this->categoryId);
   
     $stmt->execute();
     $lastInsertedId = $stmt->insert_id;
@@ -97,9 +99,9 @@ class Recipe {
 
   public function updateRecipe($recipeId) {
     $db = Database::getInstance()->getConnection();
-    $query = "UPDATE recipes SET rating = ?, adjustedRating = ?, score = ? , reviews = ?, calories = ?, carbPer = ?, fatPer = ?, proteinPer = ?, totalPer = ?, nr = ?, lim3 = ?, nrf = ?, nr2 = ?, lim32 = ?, nrf2 = ?, nr3 = ?, lim33 = ?, nrf3 = ?, nutriScorePoints = ?, nutriScore = ? WHERE id = ?";
+    $query = "UPDATE recipe SET rating = ?, adjusted_rating = ?, score = ? , reviews = ?, calories = ?, carb_per = ?, fat_per = ?, protein_per = ?, total_per = ?, nr = ?, lim3 = ?, nrf = ?, nr2 = ?, lim32 = ?, nrf2 = ?, nr3 = ?, lim33 = ?, nrf3 = ?, nutri_score_points = ?, nutri_score = ?, instruction_steps_total = ? WHERE id = ?";
     $stmt = $db->prepare($query);
-    $stmt->bind_param('iiiii', $this->rating, $this->adjustedRating, $this->score, $this->reviews, $this->calories, $this->carbPer, $this->fatPer, $this->proteinPer, $this->totalPer, $this->nr, $this->lim3, $this->nrf, $this->nr2, $this->lim32, $this->nrf2, $this->nr3, $this->lim33, $this->nrf3, $this->nutriScorePoints, $this->nutriScore, $recipeId);
+    $stmt->bind_param('dddiiiiiidddddddddiiii', $this->rating, $this->adjustedRating, $this->score, $this->reviews, $this->calories, $this->carbPer, $this->fatPer, $this->proteinPer, $this->totalPer, $this->nr, $this->lim3, $this->nrf, $this->nr2, $this->lim32, $this->nrf2, $this->nr3, $this->lim33, $this->nrf3, $this->nutriScorePoints, $this->nutriScore,$this->instructionsStepsTotal, $recipeId);
     $stmt->execute();
     $stmt->close();
   }

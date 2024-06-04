@@ -13,6 +13,7 @@
 @import "../components/NutrientCard/nutrientCard";
 @import "../components/AdminHeader/adminHeader";
 @import "../components/CategoryList/categoryList";
+@import "../components/SearchIngredients/searchIngredients";
 @import "../pages/Home/home";
 @import "../pages/Recipes/recipes";
 @import "../pages/Recipes/Notification/notification";
@@ -30,6 +31,7 @@
 @import "../pages/RecipeDetails/RecipeNutrientBalance/recipeNutrientBalance";
 @import "../pages/AdminAddRecipe/adminAddRecipe";
 @import "../pages/AdminAddRecipe/AddRecipeStepOne/addRecipeStepOne";
+@import "../pages/AdminAddRecipe/AddRecipeStepTwo/addRecipeStepTwo";
 
 * {
   margin: 0;

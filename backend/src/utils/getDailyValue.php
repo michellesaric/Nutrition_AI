@@ -4,12 +4,12 @@ require_once 'backend/src/config/Database.php';
 function getDailyValue($recipeId, $macronutrientId) {
     $db = Database::getInstance()->getConnection();
     
-    $query = `
+    $query = "
         SELECT
-            rn.daily_value
-        FROM recipe_nutrient rn
-        WHERE rn.recipe_id = ? AND rn.nutrient_id = ?
-    `;
+            daily_value
+        FROM recipe_nutrient 
+        WHERE recipe_id = ? AND nutrient_id = ?
+    ";
     
     $stmt = $db->prepare($query);
     $stmt->bind_param('ii', $recipeId, $macronutrientId);

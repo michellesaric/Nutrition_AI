@@ -1,5 +1,7 @@
 <?php
 
+require_once "backend/src/utils/getDailyValue.php";
+
 function calculateFactor($array, $recipeId) {
   $factor = 0;
   foreach ($array as $element) {

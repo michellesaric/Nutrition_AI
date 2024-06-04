@@ -1,0 +1,135 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins/fontMixin";
+
+.add-recipe-step-two {
+  width: 100%;
+
+  .add-recipe-step-two__title {
+    @include HeadingTwo();
+    margin-bottom: 24px;
+  }
+
+  .add-recipe-step-two__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 24px;
+
+    .add-recipe-step-two__search-ingredients {
+      display: flex;
+      align-items: center;
+      width: 430px;
+      padding: 12px 16px 12px 24px;
+      border-radius: 99px;
+      border: 1px solid $--primary-25;
+      background: $--neutral-100;
+
+      .add-recipe-step-two__ingredients-input {
+        border: none;
+        width: 100%;
+        @include TextBodyMedium($--neutral-600);
+        margin-left: 8px;
+      }
+    }
+
+    .add-recipe-step-two__search-units {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 430px;
+      padding: 12px 16px 12px 24px;
+      border-radius: 99px;
+      border: 1px solid $--primary-25;
+      background: $--neutral-100;
+
+      .add-recipe-step-two__unit-input {
+        border: none;
+        width: 100%;
+        @include TextBodyMedium($--neutral-600);
+      }
+    }
+  }
+
+  .add-recipe-step-two__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    border-radius: 12px;
+    background: $--primary-25;
+    margin-bottom: 24px;
+
+    .add-recipe-step-two__header-text {
+      @include HeadingFour($--neutral-700);
+    }
+  }
+
+  .add-recipe-step-two__no-ingredients {
+    @include TextBodyBold($--color-info);
+  }
+
+  .add-recipe-step-two__ingredient-list {
+    width: 100%;
+
+    .add-recipe-step-two__ingredient-box {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+      border-radius: 12px;
+
+      .add-recipe-step-two__name-unit-box {
+        width: 550px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .add-recipe-step-two__ingredient-name-wrapper {
+          display: flex;
+
+          .add-recipe-step-two__ingredient-name {
+            margin-left: 4px;
+            @include HeadingFour($--neutral-700);
+          }
+        }
+
+        .add-recipe-step-two__ingredient-amount-wrapper {
+          display: flex;
+          gap: 12px;
+
+          .add-recipe-step-two__ingredient-amount-box,
+          .add-recipe-step-two__ingredient-unit-box {
+            padding: 12px 16px 12px 24px;
+            border-radius: 99px;
+            border: 1px solid $--primary-25;
+            background: $--neutral-100;
+
+            .add-recipe-step-two__ingredient-amount-box-input,
+            .add-recipe-step-two__ingredient-unit-box-input {
+              width: 78px;
+              @include TextBodyMedium($--neutral-600);
+              border: none;
+            }
+          }
+
+          .add-recipe-step-two__ingredient-unit-box {
+            display: flex;
+            align-items: center;
+          }
+        }
+      }
+
+      .add-recipe-step-two__ingredient-description {
+        width: 190px;
+        padding: 12px 16px 12px 24px;
+        border-radius: 99px;
+        border: 1px solid $--primary-25;
+        background: $--neutral-100;
+        @include TextBodyMedium($--neutral-600);
+      }
+    }
+  }
+}

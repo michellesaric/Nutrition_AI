@@ -15,7 +15,7 @@ class RecipeInstruction {
 
     public function save() {
         $db = Database::getInstance()->getConnection();
-        $query = "INSERT INTO recipe_instructions (step, instructionId, recipeId)
+        $query = "INSERT INTO recipe_instruction (step, instruction_id, recipe_id)
                   VALUES (?, ?, ?)";
         
         $stmt = $db->prepare($query);

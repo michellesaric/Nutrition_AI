@@ -1665,6 +1665,66 @@
   font-display: swap;
   src: url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("truetype");
 }
+.search-ingredients {
+  width: 480px;
+  height: 340px;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+  border-radius: 24px;
+  border: 1px solid #d7d7d7;
+  background: #fff;
+}
+.search-ingredients .search-ingredients__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.search-ingredients .search-ingredients__wrapper .search-ingredients__item-ingredient {
+  margin-left: 12px;
+  color: #2c2c2c;
+  font-family: "Montserrat Medium";
+  font-size: 16px;
+  line-height: 24px;
+}
+.search-ingredients .search-ingredients__wrapper .search-ingredients__item-ingredient .search-ingredients__item-ingredient-bold {
+  color: #2c2c2c;
+  font-family: "Montserrat Bold";
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@font-face {
+  font-family: "Recoleta Alt";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff2) format("woff2"), url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff) format("woff");
+}
+@font-face {
+  font-family: "Montserrat Medium";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Medium.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Montserrat Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("truetype");
+}
 .recipe-card-list {
   margin-top: 107px;
   width: 100%;
@@ -3192,6 +3252,209 @@
   border: none;
   outline: none;
   color: #575757;
+  font-family: "Montserrat Medium";
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@font-face {
+  font-family: "Recoleta Alt";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff2) format("woff2"), url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff) format("woff");
+}
+@font-face {
+  font-family: "Montserrat Medium";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Medium.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Montserrat Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("truetype");
+}
+.add-recipe-step-two {
+  width: 100%;
+}
+.add-recipe-step-two .add-recipe-step-two__title {
+  color: var(--color-heading, #095536);
+  font-family: "Recoleta Alt";
+  font-size: 36px;
+  line-height: normal;
+  margin-bottom: 24px;
+}
+.add-recipe-step-two .add-recipe-step-two__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-bottom: 24px;
+}
+.add-recipe-step-two .add-recipe-step-two__wrapper .add-recipe-step-two__search-ingredients {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 430px;
+  padding: 12px 16px 12px 24px;
+  border-radius: 99px;
+  border: 1px solid rgba(42, 132, 96, 0.25);
+  background: #fff;
+}
+.add-recipe-step-two .add-recipe-step-two__wrapper .add-recipe-step-two__search-ingredients .add-recipe-step-two__ingredients-input {
+  border: none;
+  width: 100%;
+  color: #797979;
+  font-family: "Montserrat Medium";
+  font-size: 16px;
+  line-height: 24px;
+  margin-left: 8px;
+}
+.add-recipe-step-two .add-recipe-step-two__wrapper .add-recipe-step-two__search-units {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 430px;
+  padding: 12px 16px 12px 24px;
+  border-radius: 99px;
+  border: 1px solid rgba(42, 132, 96, 0.25);
+  background: #fff;
+}
+.add-recipe-step-two .add-recipe-step-two__wrapper .add-recipe-step-two__search-units .add-recipe-step-two__unit-input {
+  border: none;
+  width: 100%;
+  color: #797979;
+  font-family: "Montserrat Medium";
+  font-size: 16px;
+  line-height: 24px;
+}
+.add-recipe-step-two .add-recipe-step-two__header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 16px 32px;
+  border-radius: 12px;
+  background: rgba(42, 132, 96, 0.25);
+  margin-bottom: 24px;
+}
+.add-recipe-step-two .add-recipe-step-two__header .add-recipe-step-two__header-text {
+  color: #575757;
+  font-family: "Recoleta Alt";
+  font-size: 20px;
+  line-height: normal;
+}
+.add-recipe-step-two .add-recipe-step-two__no-ingredients {
+  color: #5c61e1;
+  font-family: "Montserrat Bold";
+  font-size: 16px;
+  line-height: 24px;
+}
+.add-recipe-step-two .add-recipe-step-two__ingredient-list {
+  width: 100%;
+}
+.add-recipe-step-two .add-recipe-step-two__ingredient-list .add-recipe-step-two__ingredient-box {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 16px;
+  border-radius: 12px;
+}
+.add-recipe-step-two .add-recipe-step-two__ingredient-list .add-recipe-step-two__ingredient-box .add-recipe-step-two__name-unit-box {
+  width: 550px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.add-recipe-step-two .add-recipe-step-two__ingredient-list .add-recipe-step-two__ingredient-box .add-recipe-step-two__name-unit-box .add-recipe-step-two__ingredient-name-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.add-recipe-step-two .add-recipe-step-two__ingredient-list .add-recipe-step-two__ingredient-box .add-recipe-step-two__name-unit-box .add-recipe-step-two__ingredient-name-wrapper .add-recipe-step-two__ingredient-name {
+  margin-left: 4px;
+  color: #575757;
+  font-family: "Recoleta Alt";
+  font-size: 20px;
+  line-height: normal;
+}
+.add-recipe-step-two .add-recipe-step-two__ingredient-list .add-recipe-step-two__ingredient-box .add-recipe-step-two__name-unit-box .add-recipe-step-two__ingredient-amount-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 12px;
+}
+.add-recipe-step-two .add-recipe-step-two__ingredient-list .add-recipe-step-two__ingredient-box .add-recipe-step-two__name-unit-box .add-recipe-step-two__ingredient-amount-wrapper .add-recipe-step-two__ingredient-amount-box,
+.add-recipe-step-two .add-recipe-step-two__ingredient-list .add-recipe-step-two__ingredient-box .add-recipe-step-two__name-unit-box .add-recipe-step-two__ingredient-amount-wrapper .add-recipe-step-two__ingredient-unit-box {
+  padding: 12px 16px 12px 24px;
+  border-radius: 99px;
+  border: 1px solid rgba(42, 132, 96, 0.25);
+  background: #fff;
+}
+.add-recipe-step-two .add-recipe-step-two__ingredient-list .add-recipe-step-two__ingredient-box .add-recipe-step-two__name-unit-box .add-recipe-step-two__ingredient-amount-wrapper .add-recipe-step-two__ingredient-amount-box .add-recipe-step-two__ingredient-amount-box-input,
+.add-recipe-step-two .add-recipe-step-two__ingredient-list .add-recipe-step-two__ingredient-box .add-recipe-step-two__name-unit-box .add-recipe-step-two__ingredient-amount-wrapper .add-recipe-step-two__ingredient-amount-box .add-recipe-step-two__ingredient-unit-box-input,
+.add-recipe-step-two .add-recipe-step-two__ingredient-list .add-recipe-step-two__ingredient-box .add-recipe-step-two__name-unit-box .add-recipe-step-two__ingredient-amount-wrapper .add-recipe-step-two__ingredient-unit-box .add-recipe-step-two__ingredient-amount-box-input,
+.add-recipe-step-two .add-recipe-step-two__ingredient-list .add-recipe-step-two__ingredient-box .add-recipe-step-two__name-unit-box .add-recipe-step-two__ingredient-amount-wrapper .add-recipe-step-two__ingredient-unit-box .add-recipe-step-two__ingredient-unit-box-input {
+  width: 78px;
+  color: #797979;
+  font-family: "Montserrat Medium";
+  font-size: 16px;
+  line-height: 24px;
+  border: none;
+}
+.add-recipe-step-two .add-recipe-step-two__ingredient-list .add-recipe-step-two__ingredient-box .add-recipe-step-two__name-unit-box .add-recipe-step-two__ingredient-amount-wrapper .add-recipe-step-two__ingredient-unit-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.add-recipe-step-two .add-recipe-step-two__ingredient-list .add-recipe-step-two__ingredient-box .add-recipe-step-two__ingredient-description {
+  width: 190px;
+  padding: 12px 16px 12px 24px;
+  border-radius: 99px;
+  border: 1px solid rgba(42, 132, 96, 0.25);
+  background: #fff;
+  color: #797979;
   font-family: "Montserrat Medium";
   font-size: 16px;
   line-height: 24px;

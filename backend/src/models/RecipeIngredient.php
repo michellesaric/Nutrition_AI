@@ -19,11 +19,11 @@ class RecipeIngredient {
 
     public function save() {
         $db = Database::getInstance()->getConnection();
-        $query = "INSERT INTO recipe_ingredients (ingredientId, recipeId, ingredientAmount, ingredientAmountUnit, ingredientAmountWeightG)
+        $query = "INSERT INTO recipe_ingredient (ingredient_id, recipe_id, ingredient_amount, ingredient_amount_unit, ingredient_amount_weight_g)
                   VALUES (?, ?, ?, ?, ?)";
         
         $stmt = $db->prepare($query);
-        $stmt->bind_param('iidss', $this->ingredientId, $this->recipeId, $this->ingredientAmount, $this->ingredientAmountUnit, $this->ingredientAmountWeightG);
+        $stmt->bind_param('iidsd', $this->ingredientId, $this->recipeId, $this->ingredientAmount, $this->ingredientAmountUnit, $this->ingredientAmountWeightG);
         $stmt->execute();
         $stmt->close();
     }

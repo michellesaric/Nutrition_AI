@@ -5,13 +5,13 @@ function calculateWeightByCategory($recipeId, $categoryId) {
   $db = Database::getInstance()->getConnection();
 
   $query = "
-        SELECT
-            ri.ingredient_amount_weight_g, 
-        FROM recipe_ingredient ris
-        JOIN ingredient i ON ri.ingredient_id = i.id
-        JOIN category_subcategory cs ON i.category_subcategory_id = cs.id
-        WHERE ri.recipe_id = ? AND cs.ingredient_category_id = ?
-    ";
+    SELECT
+        ri.ingredient_amount_weight_g
+    FROM recipe_ingredient ri
+    JOIN ingredient ON ri.ingredient_id = ingredient.id
+    JOIN category_subcategory cs ON ingredient.category_subcategory_id = cs.id
+    WHERE ri.recipe_id = ? AND cs.ingredient_category_id = ?
+";
     
   $stmt = $db->prepare($query);
   $stmt->bind_param('ii', $recipeId, $categoryId);

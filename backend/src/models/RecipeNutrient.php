@@ -90,10 +90,13 @@ class RecipeNutrient {
       $stmt->fetch();
       $stmt->close();
 
-      // Calculate daily value based on recommended value
-      $dailyValue = $nutrientValue / $recommendedValue;
-
-      $recipeNutrient = new RecipeNutrient($recipeId, $nutrientId, $nutrientValue, $dailyValue);
+      if($recommendedValue == 0) {
+        $dailyValue = 0;
+      } else {
+        $dailyValue = $nutrientValue / $recommendedValue;
+      }
+      
+      $recipeNutrient = new RecipeNutrient($nutrientValue, $dailyValue,$nutrientId, $recipeId );
       $recipeNutrient->save();
     }
   }
