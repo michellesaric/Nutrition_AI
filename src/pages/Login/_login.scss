@@ -1,0 +1,70 @@
+@import "../../styles/variables";
+@import "../../styles/mixins/fontMixin";
+
+.login {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .login__box {
+    margin-top: 126px;
+    padding: 56px 96px;
+    border-radius: 32px;
+    background: $--neutral-200;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 200px;
+
+    .login__title-wrapper {
+      display: flex;
+      justify-content: center;
+
+      .login__title {
+        @include HeadingOne();
+        margin-bottom: 48px;
+      }
+    }
+
+    .login__subtitle {
+      @include HeadingThree();
+      margin-bottom: 8px;
+    }
+
+    .login__input {
+      padding: 12px 24px;
+      border-radius: 99px;
+      border: 1px solid $--primary-25;
+      background: $--neutral-100;
+      @include TextBodyMedium();
+      width: 465px;
+    }
+
+    .username-input {
+      margin-bottom: 24px;
+    }
+
+    .password-input {
+      margin-bottom: 48px;
+    }
+
+    .login__button-wrapper {
+      display: flex;
+      justify-content: center;
+
+      .login__button {
+        padding: 12px 24px;
+        border-radius: 99px;
+        background: $--color-secondary;
+        width: 212px;
+        border: none;
+        @include HeadingFive($--neutral-100);
+        cursor: pointer;
+      }
+    }
+
+    .login__error {
+      @include HeadingFour($--color-highlight);
+      margin-top: 20px;
+    }
+  }
+}

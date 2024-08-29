@@ -1,0 +1,27 @@
+@import "../../styles/mixins/fontMixin";
+@import "../../styles/variables";
+
+.admin-add-ingredient {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .admin-add-ingredient__wrapper {
+    width: 1064px;
+    padding: 96px;
+    border-radius: 32px;
+    background: $--neutral-200;
+    margin-top: 80px;
+
+    .admin-add-ingredient__title-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      .admin-add-ingredient__title {
+        @include HeadingOne();
+        margin-bottom: 48px;
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@import "./fonts";
+@import "./variables";
+@import "./mixins/fontMixin";
+@import "../components/Header/header";
+@import "../components/SearchBar/searchBar";
+@import "../components/SearchBar/SearchResult/searchResult";
+@import "../components/CategorySection/categorySection";
+@import "../components/Recipe/recipe";
+@import "../components/RecipeAdditionalInfo/recipeAdditionalInfo";
+@import "../components/RecipeCard/recipeCard";
+@import "../components/Nutrient/nutrient";
+@import "../components/NutrientFacts/nutrientFacts";
+@import "../components/NutrientCard/nutrientCard";
+@import "../components/AdminHeader/adminHeader";
+@import "../components/CategoryList/categoryList";
+@import "../components/SearchIngredients/searchIngredients";
+@import "../pages/Home/home";
+@import "../pages/Recipes/recipes";
+@import "../pages/Recipes/Notification/notification";
+@import "../pages/Recipes/Title/title";
+@import "../pages/Recipes/RecipeListings/RecipeFilter/recipeFilter";
+@import "../pages/Recipes/RecipeListings/RecipeActions/recipeActions";
+@import "../pages/Recipes/RecipeListings/RecipeActions/RecipeActionsSort/recipeActionsSort";
+@import "../pages/Recipes/RecipeListings/recipeListings";
+@import "../pages/Recipes/RecipeListings/RecipeList/recipeList";
+@import "../pages/RecipeDetails/recipeDetails";
+@import "../pages/RecipeDetails/RecipeHeader/recipeHeader";
+@import "../pages/RecipeDetails/RecipeGeneralInfo/recipeGeneralInfo";
+@import "../pages/RecipeDetails/RecipeIngredients/recipeIngredients";
+@import "../pages/RecipeDetails/RecipeInstructions/recipeInstructions";
+@import "../pages/RecipeDetails/RecipeNutrientBalance/recipeNutrientBalance";
+@import "../pages/AdminAddRecipe/adminAddRecipe";
+@import "../pages/AdminAddRecipe/AddRecipeStepOne/addRecipeStepOne";
+@import "../pages/AdminAddRecipe/AddRecipeStepTwo/addRecipeStepTwo";
+@import "../pages/AdminAddIngredient/adminAddIngredient";
+@import "../pages/Login/login";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
