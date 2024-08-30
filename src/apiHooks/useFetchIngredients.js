@@ -13,7 +13,7 @@ const useFetchIngredients = (searchString) => {
     const fetchIngredients = async () => {
       try {
         const response = await fetch(
-          `http://localhost:80/Nutrition_AI/backend/public/index.php/get-ingredients?search=${encodeURIComponent(
+          `http://localhost:80/backend/public/index.php/get-ingredients?search=${encodeURIComponent(
             searchString
           )}`
         );

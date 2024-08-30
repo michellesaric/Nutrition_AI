@@ -10,7 +10,7 @@ const useFetchCategories = () => {
     const fetchCategories = async () => {
       try {
         const response = await fetch(
-          "http://localhost:80/Nutrition_AI/backend/public/index.php/get-categories"
+          "http://localhost:80/backend/public/index.php/get-categories"
         );
 
         if (!response.ok) {
