@@ -19,7 +19,7 @@ $adminCredentials = array(
     'admin' => 'admin'
 );
 
-$baseUri = '/Nutrition_AI/backend/public/index.php';
+$baseUri = '/backend/public/index.php';
 $requestUri = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 $requestMethod = $_SERVER['REQUEST_METHOD'];
 

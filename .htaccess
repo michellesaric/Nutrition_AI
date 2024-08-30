@@ -3,11 +3,11 @@ php_value include_path '.;C:\xampp\php\PEAR;C:\xampp\htdocs\Nutrition_AI'
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # Stop processing if already in the /public directory
-    RewriteRule ^public/ - [L]
+    # Stop processing if already in the /backend/public directory
+    RewriteRule ^backend/public/ - [L]
 
-    # Route all other requests to index.php
+    # Route all other requests to index.php in backend/public
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^Nutrition_AI/backend/public/(.*)$ public/index.php?/$1 [L]
+    RewriteRule ^backend/public/(.*)$ backend/public/index.php?/$1 [L]
 </IfModule>

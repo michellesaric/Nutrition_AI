@@ -12,7 +12,7 @@ const LoginForm = () => {
   const handleLogin = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:80/Nutrition_AI/backend/public/index.php/login",
+        "http://localhost:80/backend/public/index.php/login",
         {
           username,
           password,
