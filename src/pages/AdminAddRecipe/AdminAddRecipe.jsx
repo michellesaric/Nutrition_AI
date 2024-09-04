@@ -16,7 +16,7 @@ const AdminAddRecipe = () => {
     cookTime: "",
     readyTime: "",
     categoryId: null,
-    ingredient: [],
+    ingredients: [],
     instructions: [
       {
         id: 1,

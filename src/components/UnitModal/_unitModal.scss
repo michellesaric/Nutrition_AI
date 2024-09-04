@@ -1,0 +1,20 @@
+@import "../../styles/variables";
+@import "../../styles/mixins/fontMixin";
+
+.unit-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid $--neutral-300;
+  background: $--neutral-100;
+  position: absolute;
+  margin-top: 430px;
+  margin-left: -20px;
+  z-index: 3;
+
+  .unit-modal__unit-name {
+    @include TextBodyMedium($--neutral-800);
+  }
+}

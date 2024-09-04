@@ -12,6 +12,7 @@
   border-radius: 24px;
   border: 1px solid $--neutral-300;
   background: $--neutral-100;
+  position: absolute;
 
   .search-ingredients__wrapper {
     display: flex;
@@ -25,5 +26,23 @@
         @include TextBodyBold($--neutral-800);
       }
     }
+  }
+}
+
+.no-ingredients {
+  height: 120px;
+  gap: 10px;
+
+  .no-ingredients__title {
+    @include HeadingFive();
+  }
+
+  .no-ingredients__button {
+    padding: 12px 24px;
+    border-radius: 99px;
+    background: $--color-secondary;
+    @include HeadingFive($--neutral-100);
+    border: none;
+    outline: none;
   }
 }

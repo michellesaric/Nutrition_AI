@@ -1692,6 +1692,7 @@
   border-radius: 24px;
   border: 1px solid #d7d7d7;
   background: #fff;
+  position: absolute;
 }
 .search-ingredients .search-ingredients__wrapper {
   display: -webkit-box;
@@ -1711,6 +1712,74 @@
 .search-ingredients .search-ingredients__wrapper .search-ingredients__item-ingredient .search-ingredients__item-ingredient-bold {
   color: #2c2c2c;
   font-family: "Montserrat Bold";
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.no-ingredients {
+  height: 120px;
+  gap: 10px;
+}
+.no-ingredients .no-ingredients__title {
+  color: var(--color-heading, #095536);
+  font-family: "Recoleta Alt";
+  font-size: 16px;
+  line-height: normal;
+}
+.no-ingredients .no-ingredients__button {
+  padding: 12px 24px;
+  border-radius: 99px;
+  background: #4a4995;
+  color: #fff;
+  font-family: "Recoleta Alt";
+  font-size: 16px;
+  line-height: normal;
+  border: none;
+  outline: none;
+}
+
+@font-face {
+  font-family: "Recoleta Alt";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff2) format("woff2"), url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff) format("woff");
+}
+@font-face {
+  font-family: "Montserrat Medium";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Medium.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Montserrat Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("truetype");
+}
+.unit-modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 18px;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #d7d7d7;
+  background: #fff;
+  position: absolute;
+  margin-top: 430px;
+  margin-left: -20px;
+  z-index: 3;
+}
+.unit-modal .unit-modal__unit-name {
+  color: #2c2c2c;
+  font-family: "Montserrat Medium";
   font-size: 16px;
   line-height: 24px;
 }
@@ -3238,6 +3307,7 @@
   padding: 96px;
   border-radius: 32px;
   background: #f5f5f5;
+  margin-bottom: 80px;
 }
 .admin-add-recipe .admin-add-recipe__wrapper .admin-add-recipe__title-wrapper {
   width: 100%;
@@ -3461,27 +3531,12 @@
   font-size: 16px;
   line-height: 24px;
   margin-left: 8px;
+  outline: none;
 }
-.add-recipe-step-two .add-recipe-step-two__wrapper .add-recipe-step-two__search-units {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.add-recipe-step-two .add-recipe-step-two__wrapper .add-recipe-step-two__search-instruction {
   width: 430px;
-  padding: 12px 16px 12px 24px;
-  border-radius: 99px;
-  border: 1px solid rgba(42, 132, 96, 0.25);
-  background: #fff;
-}
-.add-recipe-step-two .add-recipe-step-two__wrapper .add-recipe-step-two__search-units .add-recipe-step-two__unit-input {
-  border: none;
-  width: 100%;
-  color: #797979;
+  margin-left: 12px;
+  color: #000;
   font-family: "Montserrat Medium";
   font-size: 16px;
   line-height: 24px;
@@ -3578,6 +3633,7 @@
   font-size: 16px;
   line-height: 24px;
   border: none;
+  outline: none;
 }
 .add-recipe-step-two .add-recipe-step-two__ingredient-list .add-recipe-step-two__ingredient-box .add-recipe-step-two__name-unit-box .add-recipe-step-two__ingredient-amount-wrapper .add-recipe-step-two__ingredient-unit-box {
   display: -webkit-box;
