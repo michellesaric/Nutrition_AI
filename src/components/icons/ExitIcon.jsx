@@ -1,6 +1,6 @@
 import React from "react";
 
-const ExitIcon = () => {
+const ExitIcon = ({ color = "#575757" }) => {
   return (
     <svg
       width="24"
@@ -13,7 +13,7 @@ const ExitIcon = () => {
         <path
           id="Vector"
           d="M18 6L6 18"
-          stroke="#575757"
+          stroke={color}
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -21,7 +21,7 @@ const ExitIcon = () => {
         <path
           id="Vector_2"
           d="M6 6L18 18"
-          stroke="#575757"
+          stroke={color}
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"

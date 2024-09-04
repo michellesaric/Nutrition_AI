@@ -1560,6 +1560,17 @@
   line-height: normal;
   cursor: pointer;
 }
+.admin-header .admin-header__wrapper .admin-header__link-logo-wrapper .admin-header__back-to-dashboard-button {
+  padding: 12px 24px;
+  border-radius: 99px;
+  border: none;
+  background: #4a4995;
+  color: #fff;
+  font-family: "Recoleta Alt";
+  font-size: 16px;
+  line-height: normal;
+  cursor: pointer;
+}
 
 @media screen and (max-width: 1220px) {
   .admin-header .admin-header__wrapper {
@@ -3084,6 +3095,134 @@
   font-display: swap;
   src: url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("truetype");
 }
+.admin {
+  background-color: #f5f5f5;
+}
+.admin .admin-dashboard__wrapper {
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.admin .admin-dashboard__wrapper .admin-dashboard__statistics {
+  margin-top: 50px;
+  width: 90%;
+  border-radius: 16px;
+}
+.admin .admin-dashboard__wrapper .admin-dashboard__statistics .admin-dashboard__statistics-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-radius: 16px;
+  background-color: rgba(42, 132, 96, 0.25);
+  padding: 32px;
+  margin-bottom: 12px;
+}
+.admin .admin-dashboard__wrapper .admin-dashboard__statistics .admin-dashboard__statistics-wrapper .admin-dashboard__statistics-title,
+.admin .admin-dashboard__wrapper .admin-dashboard__statistics .admin-dashboard__statistics-wrapper .admin-dashboard__statistics-count {
+  color: var(--color-heading, #095536);
+  font-family: "Recoleta Alt";
+  font-size: 24px;
+  line-height: normal;
+}
+.admin .admin-dashboard__wrapper .admin-dashboard__recipe-table-member {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 12px;
+  padding: 16px;
+}
+.admin .admin-dashboard__wrapper .admin-dashboard__recipe-table-member .admin-dashboard__recipe-table-recipe-title {
+  color: #000;
+  font-family: "Montserrat Medium";
+  font-size: 16px;
+  line-height: 24px;
+}
+.admin .admin-dashboard__wrapper .admin-dashboard__recipe-table-member .admin-dashboard__recipe-table-button-wrapper {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.admin .admin-dashboard__wrapper .admin-dashboard__recipe-table-member .admin-dashboard__recipe-table-button-wrapper .admin-dashboard__recipe-table-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border-radius: 12px;
+  padding: 6px 12px;
+  color: #000;
+  font-family: "Montserrat Medium";
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+}
+.admin .admin-dashboard__wrapper .admin-dashboard__recipe-table-member .admin-dashboard__recipe-table-button-wrapper .view-button {
+  color: #4a4995;
+  background-color: rgba(74, 73, 149, 0.1);
+}
+.admin .admin-dashboard__wrapper .admin-dashboard__recipe-table-member .admin-dashboard__recipe-table-button-wrapper .edit-button {
+  color: #2a8460;
+  background-color: rgba(42, 132, 96, 0.1);
+}
+.admin .admin-dashboard__wrapper .admin-dashboard__recipe-table-member .admin-dashboard__recipe-table-button-wrapper .delete-button {
+  color: #f89e52;
+  background-color: rgba(248, 158, 82, 0.1);
+}
+.admin .admin-dashboard__wrapper .admin-dashboard__recipe-table-member:last-child {
+  margin-bottom: 80px;
+}
+
+@font-face {
+  font-family: "Recoleta Alt";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff2) format("woff2"), url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff) format("woff");
+}
+@font-face {
+  font-family: "Montserrat Medium";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Medium.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Montserrat Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("truetype");
+}
 .admin-add-recipe {
   width: 100%;
   display: -webkit-box;
@@ -3458,6 +3597,72 @@
   font-family: "Montserrat Medium";
   font-size: 16px;
   line-height: 24px;
+}
+
+@font-face {
+  font-family: "Recoleta Alt";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff2) format("woff2"), url(../../assets/fonts/RecoletaAlt/Recoleta-SemiBold.woff) format("woff");
+}
+@font-face {
+  font-family: "Montserrat Medium";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Medium.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Montserrat Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("truetype");
+}
+.add-recipe-step-three .add-recipe-step-three__title {
+  color: var(--color-heading, #095536);
+  font-family: "Recoleta Alt";
+  font-size: 36px;
+  line-height: normal;
+  margin-bottom: 24px;
+}
+.add-recipe-step-three .add-recipe-step-three__step {
+  color: var(--color-heading, #095536);
+  font-family: "Recoleta Alt";
+  font-size: 24px;
+  line-height: normal;
+  margin-bottom: 8px;
+}
+.add-recipe-step-three .add-recipe-step-three__input {
+  width: 100%;
+  border-radius: 24px;
+  border: 1px solid rgba(42, 132, 96, 0.25);
+  background: #fff;
+  padding: 24px;
+  margin-bottom: 24px;
+  color: #000;
+  font-family: "Montserrat Medium";
+  font-size: 16px;
+  line-height: 24px;
+}
+.add-recipe-step-three .add-recipe-step-three__button {
+  background: transparent;
+  outline: none;
+  padding: 12px 24px;
+  border-radius: 99px;
+  border: 1px solid #4a4995;
+  color: #4a4995;
+  font-family: "Recoleta Alt";
+  font-size: 16px;
+  line-height: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
 }
 
 @font-face {

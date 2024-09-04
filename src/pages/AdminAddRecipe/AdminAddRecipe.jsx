@@ -17,7 +17,12 @@ const AdminAddRecipe = () => {
     readyTime: "",
     categoryId: null,
     ingredient: [],
-    instructions: [],
+    instructions: [
+      {
+        id: 1,
+        instruction: "",
+      },
+    ],
   });
 
   const nextStep = () => {

@@ -1,6 +1,6 @@
 import React from "react";
 
-const PlusIcon = () => {
+const PlusIcon = ({ color = "#575757" }) => {
   return (
     <svg
       width="24"
@@ -11,17 +11,17 @@ const PlusIcon = () => {
     >
       <path
         d="M12 5V19"
-        stroke="#575757"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        stroke={color}
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M5 12H19"
-        stroke="#575757"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        stroke={color}
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

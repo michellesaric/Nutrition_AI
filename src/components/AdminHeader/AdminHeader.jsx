@@ -33,7 +33,13 @@ const AdminHeader = () => {
               </div>
             </div>
           )}
-          {!isAdminDashboard && <div></div>}
+          {!isAdminDashboard && (
+            <Link to="/admin-dashboard">
+              <button className="admin-header__back-to-dashboard-button">
+                Back to dashboard
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     </header>
